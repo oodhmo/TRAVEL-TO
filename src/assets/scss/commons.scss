@@ -1,0 +1,127 @@
+ul, li {
+  list-style: none;
+}
+
+#map {
+  width: 700px;
+  height: 400px;
+  margin-left: 90px;
+}
+
+article, .card {
+  cursor: pointer;
+
+  .date{
+    font-size: 14px;
+  }
+  .addr {
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+  }
+}
+
+.img-area {
+  width: 288px;
+}
+
+//underline
+.underline{
+  text-decoration: underline;
+  text-underline-position:under
+}
+
+//border
+.bd-g {
+  border: 1px solid gray;
+}
+
+//font size
+.sm10 {
+  font-size: 10px;
+}
+
+//button
+.cate-btn {
+  background-color: white;
+  border: 1px dotted gray;
+  border-radius: 50px;
+
+  width: 100px;
+  font-size: 15px;
+}
+
+//color
+.cnt {
+  color:rgb(255, 119, 88);
+}
+
+//margin 
+
+.mg10 {
+  margin: 10px;
+}
+
+.mtb10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ptb10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pd10 {
+  padding: 10px;
+}
+
+
+//icon
+/* .plus {
+  position: absolute;
+} */
+
+.area-btn {
+  display: inline-block;
+}
+
+//paging
+.paging {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  //margin-left: 110px;
+  .items-area {
+    display: flex;
+  }
+
+  .page-link{
+    margin: 8px;
+    padding: 6px 12px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .page-link:hover {
+    border:1px solid #41539cd1;
+    background-color: #41539cd1;
+    color: white;
+  }
+  .active {
+    .page-link {
+      background-color: lightgray;
+    }
+    
+  }
+
+  .page-item.active .page-link {
+    border-color: #3c4d91;
+    background-color:#3c4d91;
+  }
+}
+
+.no-content {
+  text-align: center;
+  margin-top: 100px;
+  color: lightgray;
+}

@@ -1,0 +1,20 @@
+{ 
+  "NAVBAR" : [
+    {
+      "name": "홈",
+      "to": "/"
+    },
+    {
+      "name": "여행지",
+      "to": "/tour"
+    },
+    {
+      "name": "축제/행사",
+      "to": "/culture"
+    },
+    {
+      "name": "여가",
+      "to": "/leisure"
+    }
+  ]
+}

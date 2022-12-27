@@ -1,0 +1,108 @@
+ul, li {
+  list-style: none;
+}
+
+#map {
+  width: 700px;
+  height: 400px;
+  margin-left: 90px;
+}
+
+article, .card {
+  cursor: pointer;
+}
+article .date, .card .date {
+  font-size: 14px;
+}
+article .addr, .card .addr {
+  color: rgb(153, 153, 153);
+  font-size: 14px;
+}
+
+.img-area {
+  width: 288px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.bd-g {
+  border: 1px solid gray;
+}
+
+.sm10 {
+  font-size: 10px;
+}
+
+.cate-btn {
+  background-color: white;
+  border: 1px dotted gray;
+  border-radius: 50px;
+  width: 100px;
+  font-size: 15px;
+}
+
+.cnt {
+  color: rgb(255, 119, 88);
+}
+
+.mg10 {
+  margin: 10px;
+}
+
+.mtb10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ptb10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pd10 {
+  padding: 10px;
+}
+
+/* .plus {
+  position: absolute;
+} */
+.area-btn {
+  display: inline-block;
+}
+
+.paging {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.paging .items-area {
+  display: flex;
+}
+.paging .page-link {
+  margin: 8px;
+  padding: 6px 12px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.paging .page-link:hover {
+  border: 1px solid rgba(65, 83, 156, 0.8196078431);
+  background-color: rgba(65, 83, 156, 0.8196078431);
+  color: white;
+}
+.paging .active .page-link {
+  background-color: lightgray;
+}
+.paging .page-item.active .page-link {
+  border-color: #3c4d91;
+  background-color: #3c4d91;
+}
+
+.no-content {
+  text-align: center;
+  margin-top: 100px;
+  color: lightgray;
+}/*# sourceMappingURL=commons.css.map */
