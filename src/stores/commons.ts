@@ -22,26 +22,26 @@ export const useCommonsStore = defineStore('commonsStore', {
   actions: {
     getContentDetail(contentId: string | string[], contentTypeId: string) {
       fetchContentDetail(contentId)
-        .then((resp) => {
+        .then((resp:any) => {
           this.contentDetail = resp.data.response.body.items.item[0]
           let addr:Array<string> = resp.data.response.body.items.item[0].addr1.split(' ')
           this.sigungu = `${addr[0]} ${addr[1]}`
         })
       
       fetchContentDetail2(contentId, contentTypeId)
-        .then((resp) => {
+        .then((resp:any) => {
           this.contentDetail2 = resp.data.response.body.items.item[0]
         })
       
       fetchDetailImage(contentId)
-        .then((resp) => {
+        .then((resp:any) => {
           this.detailImage = resp.data.response.body.items.item[0]
         })
     },
 
     getSearchResult(query: IQuery) {
       fetchSearchResult(query)
-        .then((resp) => {
+        .then((resp:any) => {
           console.log(resp.data)
           console.log(query)
           this.searchResult = resp.data.response.body.items.item

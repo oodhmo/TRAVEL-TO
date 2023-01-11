@@ -16,14 +16,14 @@ export const useTourStore = defineStore('tourStore', {
   actions: {
     getTourList(query:IQuery) {
       fetchTourInfo(query)
-        .then((resp) => {
+        .then((resp:any) => {
           this.tourList = resp.data.response.body.items
           this.selectedArea = query?.areaCode
         })
     },
     getTourItemsCount(query:IQuery) {
       fetchTourInfo(query)
-        .then((resp) => {
+        .then((resp:any) => {
           this.tourItemsCount = resp.data.response.body.totalCount
         })
     },

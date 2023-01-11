@@ -11,7 +11,7 @@ export const useCultureStore = defineStore('cultureStore', {
   actions: {
     getFestivalInfo(query: IQuery) {
       console.log(query)
-      fetchFestivalInfo(query).then((resp) => {
+      fetchFestivalInfo(query).then((resp:any) => {
         this.festivalList = resp.data.response.body.items.item
         this.festivalItemCnt = resp.data.response.body.totalCount
 

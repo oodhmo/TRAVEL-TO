@@ -15,11 +15,9 @@ export const useLeisureStore = defineStore('leisureStore', {
   actions: {
     getLeisureInfo(query: IQuery) {
       fetchLeisureInfo(query)
-        .then((resp) => {
+        .then((resp:any) => {
           this.leisureList = resp.data.response.body.items.item
           this.leisureItemCnt = resp.data.response.body.totalCount
-
-          //console.log(this.leisureList)
         })
     }
   }
