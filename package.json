@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
+    "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "bootstrap-vue-3": "^0.4.13",
     "core-js": "^3.8.3",
