@@ -11,7 +11,7 @@
 
 <br>
 
-### heavy_exclamation_mark::heavy_exclamation_mark: STILL IN DEVELOPMENT heavy_exclamation_mark::heavy_exclamation_mark:
+### :heavy_exclamation_mark::heavy_exclamation_mark: STILL IN DEVELOPMENT :heavy_exclamation_mark::heavy_exclamation_mark:
 
 <br>
 
@@ -21,20 +21,24 @@
 
 ### 개발 완료된 기능 소개
 
-#### :small_orange_diamond:홈
 <br>
+
+#### :small_orange_diamond:홈
 
 - 홈 화면: 서울~제주 이미지 슬라이드
 <img src="./src/assets/images/travel-to-1.gif">
 (gif 1.5배속)
+
+<br>
 
 - 홈 컨텐츠: 이번 주 축제, 지역 바로가기
 <img src="./src/assets/images/travel-to-2.gif">
 
 <br>
 
+---
+
 #### :small_orange_diamond:여행지
-<br>
 
 - 여행지 조회 화면
 <img src="./src/assets/images/travel-to-10.png">
@@ -47,8 +51,9 @@
 
 <br>
 
+---
+
 #### :small_orange_diamond:축제/행사
-<br>
 
 - 축제/행사 조회 화면 : 날짜, 지역 분류
 <img src="./src/assets/images/travel-to-5.png">
@@ -56,8 +61,9 @@
 
 <br>
 
+---
+
 #### :small_orange_diamond:여가
-<br>
 
 - 여가활동 조회 화면
 <img src="./src/assets/images/travel-to-6.png">
@@ -73,8 +79,9 @@
 
 <br>
 
+---
+
 #### :small_orange_diamond:검색 기능
-<br>
 
 - 검색어 입력
 <img src="./src/assets/images/travel-to-13.gif">
