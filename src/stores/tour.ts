@@ -17,6 +17,7 @@ export const useTourStore = defineStore('tourStore', {
     getTourList(query:IQuery) {
       fetchTourInfo(query)
         .then((resp:any) => {
+          console.log(resp)
           this.tourList = resp.data.response.body.items
           this.selectedArea = query?.areaCode
         })

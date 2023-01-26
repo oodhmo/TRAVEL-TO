@@ -152,11 +152,13 @@ footer {
     padding: 15% 13%;
   }
 
-  #content-wrapper {
-    position: absolute;
-    z-index: 1 !important;
-    right: 0;
-    margin: 8% 3%;
+  @media (min-width: 1495px) {
+    #content-wrapper {
+      position: absolute;
+      z-index: 1 !important;
+      right: 0;
+      margin: 8% 3%;
+    }
   }
 
   .slideImage {
@@ -1042,4 +1044,24 @@ footer {
 }
 
 
+/* =====================================================================
 
+                                          REACTIVITY
+
+=====================================================================*/
+
+
+@media (max-width: 1495px) {
+  //home
+  #home {
+    display: grid;
+    grid-template-rows: 500px;
+  }
+  .info {
+    display: flex;
+  }
+
+  #content-wrapper {
+
+  }
+}
