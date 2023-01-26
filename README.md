@@ -38,6 +38,8 @@
 
 ---
 
+<br>
+
 #### :small_orange_diamond:여행지
 
 - 여행지 조회 화면
@@ -53,6 +55,8 @@
 
 ---
 
+<br>
+
 #### :small_orange_diamond:축제/행사
 
 - 축제/행사 조회 화면 : 날짜, 지역 분류
@@ -62,6 +66,8 @@
 <br>
 
 ---
+
+<br>
 
 #### :small_orange_diamond:여가
 
@@ -81,12 +87,14 @@
 
 ---
 
+<br>
+
 #### :small_orange_diamond:검색 기능
 
 - 검색어 입력
 <img src="./src/assets/images/travel-to-13.gif">
 
-- 결과 화면
+- 결과 화면: 카테고리 분류
 <img src="./src/assets/images/travel-to-14.gif">
 
 
