@@ -234,10 +234,18 @@ footer {
   .title {
     color:rgb(255, 252, 247);
     font-size: 500%;
-    //position: absolute;
     z-index: 0;
     width: 50vw;
     line-height: 100px;
+  }
+
+  @media (min-width: 1495px) {
+    .app-description {
+      margin-top: 5%;
+      width: 20vw;
+      font-size: 85%;
+      line-height: 30px;
+    }
   }
 
   .app-description {
@@ -246,14 +254,6 @@ footer {
     padding: 20px;
     color:rgb(255, 252, 247);
     z-index: 1;
-    /* position: absolute;
-    top: 20%; */
-    margin-top: 5%;
-    width: 20vw;
-    //width: 350px;
-    //right: 63%;
-    font-size: 85%;
-    line-height: 30px;
   }
 }
 //home - area
@@ -264,14 +264,20 @@ footer {
   width: 1900px;
 }
 
+
+@media (min-width: 1495px) {
+  .area-wrap {
+    position: absolute;
+    top: 470px;
+    right: 95px;
+    margin-top: -90px;
+  }
+}
+
 .area-wrap {
   //height: 450px;
   z-index: 1;
-  position: absolute;
-  top: 470px;
-  right: 95px;
   width: 720px;
-  margin-top: -90px;
 
   .semi-title{
     margin-left: 22px;
@@ -428,13 +434,18 @@ footer {
     }
   }
 
+  @media (min-width: 1495px) {
+    .cards {
+      right: 55px;
+    }
+  }
+
   .cards {
     z-index: 0;
     position: relative;
     overflow-x: hidden;
     display: flex;
     margin: 30px;
-    right: 55px;
     top: 40px;
     width: 700px;
 
@@ -466,15 +477,21 @@ footer {
     height: 40px;
     cursor: pointer;
   }
+  @media (min-width: 1495px){
+    .lft{
+      left: -50px;
+    }
+    .rgt {
+      right: 55px;
+    }
+  }
   .lft {
     padding-top: 3px;
     padding-right: 10px;
-    left: -50px;
   }
   .rgt {
     padding-top: 3px;
     padding-left: 10px;
-    right: 55px;
   }
 
   .bottom {
@@ -1084,16 +1101,22 @@ footer {
       }
 
       .info {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
         position: absolute;
+        top: 180px;
+        left: 150px;
+
+        .overview {
+          width: 300px;
+        }
       }
     }
 
     #content {
-      background-color: lightgray;
+      width: 100%;
+      background-color: rgb(242, 243, 246);
     }
-  }
-  .info {
-    display: flex;
   }
 
   .white-box {
@@ -1103,9 +1126,44 @@ footer {
   .week-festival {
     margin-top: 500px;
     background-color: lightgray;
+    
+    .body {
+      margin-bottom: 30px;
+    }
+
+    .semi-title{
+      left: 290px;
+    }
+
+    .go-culture {
+      right: 240px;
+    }
   }
 
   .area-wrap {
-    top: 510px;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 900px;
+
+    .content {
+      margin: 30px 0px;
+    }
+  }
+
+  .area-btns {
+    
+  }
+
+  .cards {
+    left: 10px;
+  }
+
+  .lft {
+    left: 260px;
+  }
+
+  .rgt {
+    right: 280px;
   }
 }
