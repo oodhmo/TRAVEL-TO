@@ -106,6 +106,7 @@ let map: Ref<any> = ref(null)
 const loadScript = () => {
   const script = document.createElement("script");
   script.src=`//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.VUE_APP_KAKAOMAP_KEY}`
+  //
   script.onload = () => window.kakao.maps.load(loadMap)
 
   document.head.appendChild(script)
@@ -131,10 +132,7 @@ const loadMarker = () => {
   marker.setMap(map)
 }
 
-//commonsStore.setContentCategories(tourStore.contentDetail.cat1, tourStore.contentDetail.cat2, tourStore.contentDetail.cat3, tourStore.contentDetail.contenttypeid)
 onMounted(()=>{
-  
-  //console.log(parseFloat(tourStore.contentDetail.mapx), parseFloat(tourStore.contentDetail.mapy))
   if(window.kakao && window.kakao.maps) {
     loadMap()
   }
