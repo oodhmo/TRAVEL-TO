@@ -63,7 +63,7 @@
 
 <script setup lang="ts">
 /* eslint-disable */
-import { ref, onMounted, computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 import type {Ref} from 'vue'
 import { useTourStore } from '@/stores/tour'
 import { useCommonsStore } from '@/stores/commons'
@@ -117,9 +117,7 @@ const loadMarker = () => {
 }
 
 //commonsStore.setContentCategories(tourStore.contentDetail.cat1, tourStore.contentDetail.cat2, tourStore.contentDetail.cat3, tourStore.contentDetail.contenttypeid)
-onMounted(()=>{
-  console.log(commonsStore.contentDetail)
-  //console.log(parseFloat(tourStore.contentDetail.mapx), parseFloat(tourStore.contentDetail.mapy))
+watch(()=>commonsStore.contentDetail, ()=>{
   if(window.kakao && window.kakao.maps) {
     loadMap()
   }

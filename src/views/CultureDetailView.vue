@@ -72,7 +72,7 @@
 
 <script setup lang="ts">
 /* eslint-disable */
-import { ref, onMounted, computed } from 'vue'
+import { ref, watch } from 'vue'
 import type {Ref} from 'vue'
 import { useTourStore } from '@/stores/tour'
 import { useCommonsStore } from '@/stores/commons'
@@ -106,14 +106,13 @@ let map: Ref<any> = ref(null)
 const loadScript = () => {
   const script = document.createElement("script");
   script.src=`//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.VUE_APP_KAKAOMAP_KEY}`
-  //
   script.onload = () => window.kakao.maps.load(loadMap)
 
   document.head.appendChild(script)
 }
 
 const loadMap = () => {
-  console.log(parseFloat(commonsStore.contentDetail.mapx), parseFloat(commonsStore.contentDetail.mapy))
+  //console.log(parseFloat(commonsStore.contentDetail.mapx), parseFloat(commonsStore.contentDetail.mapy))
   const container = document.getElementById("map")
   const options = {
     center: new window.kakao.maps.LatLng(commonsStore.contentDetail.mapy, commonsStore.contentDetail.mapx),
@@ -132,7 +131,7 @@ const loadMarker = () => {
   marker.setMap(map)
 }
 
-onMounted(()=>{
+watch(()=>commonsStore.contentDetail, ()=>{
   if(window.kakao && window.kakao.maps) {
     loadMap()
   }

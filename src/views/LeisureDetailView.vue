@@ -170,7 +170,7 @@
 
 <script setup lang="ts">
 /* eslint-disable */
-import { ref, onMounted, computed } from 'vue'
+import { ref, watch } from 'vue'
 import type {Ref} from 'vue'
 import { useTourStore } from '@/stores/tour'
 import { useCommonsStore } from '@/stores/commons'
@@ -217,7 +217,7 @@ const loadMarker = () => {
   marker.setMap(map)
 }
 
-onMounted(()=>{
+watch(()=>commonsStore.contentDetail, ()=>{
   if(window.kakao && window.kakao.maps) {
     loadMap()
   }
