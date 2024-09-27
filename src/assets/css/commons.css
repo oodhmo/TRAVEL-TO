@@ -75,10 +75,16 @@ article .addr, .card .addr {
 
 .paging {
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .paging .items-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .paging .page-link {
@@ -105,4 +111,4 @@ article .addr, .card .addr {
   text-align: center;
   margin-top: 100px;
   color: lightgray;
-}/*# sourceMappingURL=commons.css.map */
+}
