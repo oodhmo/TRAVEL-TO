@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="bottom">
-              <router-link to="/culture" class="go-culture">축제/행사 더보기 +</router-link>
+              <router-link to="/culture" class="go-culture plus">축제/행사 더보기 +</router-link>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
             지역별 여행지 🚗
           </div>
           <div class="plus">
-            <router-link to="/culture" class="go-tour">지역 더보기 +</router-link>
+            <router-link to="/culture" class="go-tour plus">지역 더보기 +</router-link>
           </div>
 
           <div class="area-btns">

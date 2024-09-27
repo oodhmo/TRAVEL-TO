@@ -17,7 +17,7 @@
   font-size: 33px;
   cursor: pointer;
   font-family: "Bebas Neue", cursive;
-  color: rgb(42, 81, 166);
+  color: #194f97;
 }
 .navbar .rgt {
   margin-left: 100px;
@@ -69,11 +69,11 @@
 }
 .navbar .rgt .tabs .now-tab {
   font-weight: bold;
-  color: #2c3d80;
-  border-bottom: 3px solid #2c3d80;
+  color: #194f97;
+  border-bottom: 3px solid #194f97;
 }
 .navbar .rgt .tabs .tab-item:hover {
-  color: #2c3d80;
+  color: #194f97;
   border-bottom: 3px solid rgba(44, 61, 128, 0.6352941176);
 }
 
@@ -269,6 +269,19 @@ footer {
   color: rgb(255, 252, 247);
   z-index: 1;
 }
+#home .semi-title {
+  font-size: 20px;
+}
+#home .plus {
+  font-weight: bold;
+  font-size: 12px;
+  color: rgb(68, 68, 68);
+  text-decoration: none;
+}
+#home .plus:hover {
+  cursor: pointer;
+  color: #194f97;
+}
 
 .baro {
   background-color: #edeef2;
@@ -302,18 +315,12 @@ footer {
           transform: translate(-50%);
 }
 
-.semi-title {
-  font-size: 16px;
-}
 .semi-title ion-icon {
   color: rgb(182, 144, 75);
 }
 
 .go-tour {
-  font-weight: bold;
   position: absolute;
-  font-size: 12px;
-  color: rgb(68, 68, 68);
   text-decoration: none;
   top: 8px;
   right: 6px;
@@ -402,7 +409,6 @@ footer {
 }
 .week-festival .semi-title {
   position: absolute;
-  font-size: 15px;
   top: 45px;
   left: -22px;
 }
@@ -508,11 +514,7 @@ footer {
   top: 0px;
 }
 .week-festival .go-culture {
-  font-weight: bold;
   position: absolute;
-  font-size: 12px;
-  color: rgb(68, 68, 68);
-  text-decoration: none;
   top: 49px;
   right: 40px;
   width: 140px;

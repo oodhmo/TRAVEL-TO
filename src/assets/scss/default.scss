@@ -19,7 +19,7 @@
     cursor:pointer;
 
     font-family: 'Bebas Neue', cursive;
-    color:rgb(42, 81, 166);
+    color: $color-primary;
   }
 
   .rgt {
@@ -70,13 +70,13 @@
 
       .now-tab {
         font-weight: bold;
-        color: #2c3d80;
-        border-bottom: 3px solid #2c3d80;
+        color: $color-primary;
+        border-bottom: 3px solid $color-primary;
       }
 
       .tab-item:hover {
-        color: #2c3d80;
-        border-bottom: 3px solid #2c3d80a2;
+        color: $color-primary;
+        border-bottom: 3px solid $color-primary-faded;
       }
     }
   }
@@ -256,6 +256,22 @@ footer {
     color:rgb(255, 252, 247);
     z-index: 1;
   }
+
+  .semi-title {
+    font-size: 20px;
+  }
+
+  .plus {
+    font-weight: bold;
+    font-size: 12px;
+    color:rgb(68, 68, 68);
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-primary;
+    }
+  }
 }
 //home - area
 
@@ -298,19 +314,13 @@ footer {
 }
 
 .semi-title {
-  font-size: 16px;
-  //height: 0px;
-
   ion-icon {
     color:rgb(182, 144, 75);
   }
 }
 
 .go-tour {
-  font-weight: bold;
   position: absolute;
-  font-size: 12px;
-  color:rgb(68, 68, 68);
   text-decoration: none;
   top: 8px;
   right: 6px;
@@ -397,7 +407,6 @@ footer {
   
   .semi-title {
     position: absolute;
-    font-size: 15px;
     top: 45px;
     left: -22px;
   }
@@ -417,7 +426,7 @@ footer {
     }
 
     .date{
-      color:#194f97;
+      color: $color-primary;
     }
 
     .card {
@@ -502,11 +511,7 @@ footer {
   }
 
   .go-culture {
-    font-weight: bold;
     position: absolute;
-    font-size: 12px;
-    color:rgb(68, 68, 68);
-    text-decoration: none;
     top: 49px;
     right: 40px;
     width: 140px;
