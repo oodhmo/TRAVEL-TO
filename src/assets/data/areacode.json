@@ -4,7 +4,7 @@
       "text": "전체",
       "text2": "전체",
       "code": "",
-      "imgUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80"
+      "imgUrl": "beach.jpg"
     },
     {
       "text": "서울",
@@ -100,7 +100,7 @@
       "text": "전라남도",
       "text2": "전남",
       "code": "38",
-      "imgUrl": "https://images.unsplash.com/photo-1548115184-bc6544d06a58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+      "imgUrl": "../images/background/junnam.jpg"
     },
     {
       "text": "제주도",

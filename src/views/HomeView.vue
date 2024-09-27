@@ -1,7 +1,29 @@
 <template>
   <div id="home">
+    
+    <div class="slide-container" :style="setBackgroundImage">
+      <div id="banner">
+        <div class="info">
+          <div class="title">
+          TRAVEL <br>
+          TO # <span :key="slide.name">{{slide.name}}</span>
+          </div>
+          <div class="overview">
+            <div class="app-description">
+              'TRAVEL TO # ?'는 어디론가 여행을 떠나고 싶은 막연한 생각(어디 가지, 뭐 하지 등)들을
+              태그(#)로 표현하고 선택함으로써 구체화해나가자는 의미로 정한 이름입니다.<br>
+              <strong class="underline">한국관광공사의 '국문 관광정보 서비스' API</strong>를 이용하여 여행정보를 제공합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrapper">
 
-    <div id="banner">
+      </div>
+    </div>
+
+
+    <!-- <div id="banner">
       <transition-group name="fade" mode="out-in" tag="div" class="slides">
         <div class="slideParent" :key="slide.name">
           <div class="slideImage" :style="setBackgroundImage"></div>
@@ -20,9 +42,9 @@
           </div>
         </div>
       </transition-group>
-    </div>
+    </div> -->
 
-    <div id="content-wrapper">
+    <!-- <div id="content-wrapper">
       <div class="white-box">  
         <img src="@/assets/images/white-box.png"/>
       </div>
@@ -96,14 +118,14 @@
           </div>
         </div>       
       </div>
-    </div>
+    </div> -->
     <!-- <bottom-footer /> -->
   </div>
 </template>
 
 <script setup lang="ts">
 /* eslint-disable */
-import {computed, ref, watch} from 'vue'
+import {computed, ref, watch, onMounted} from 'vue'
 import type {Ref} from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import { useTourStore } from '@/stores/tour'
@@ -124,8 +146,12 @@ let slide : Ref<any> = ref({
   url: areaCodes[0].imgUrl,
   name: '?',
 })
+
 let current : number = 0 
+
 const showSlide = () => {
+  // const slideContainer: HTMLElement | null = document.querySelector('.slide-container');
+  
   setInterval(()=>{
     current++
     
@@ -133,24 +159,30 @@ const showSlide = () => {
       current = 0
     }
 
-    if(areaCodes[current].text === '전체') {
+    slide.value = { 
+      url: `../assets/images/background(${areaCodes[current].imgUrl})`,
+      name: areaCodes[current].text === '전체' ? '?' : areaCodes[current].text2,
+    };
+    console.log('slide.value', slide.value.url)
+
+    /* if(areaCodes[current].text === '전체') {
       slide.value = { 
-        url: areaCodes[current].imgUrl,
+        url: require(`@/assets/images/${areaCodes[current].imgUrl}`),
         name: '?',
       }
     }
     else {
       slide.value = { 
-        url: areaCodes[current].imgUrl,
+        url: require(`@/assets/images/${areaCodes[current].imgUrl}`),
         name: areaCodes[current].text2,
       }
-    }
+    } */
   }, 4000)
 }
 
 const setBackgroundImage = computed(()=>{
   return { 
-    backgroundImage: "url("+slide.value.url+")"
+    backgroundImage: "url(`../assets/images/background(${areaCodes[current].imgUrl})`)"
   }
 })
 
@@ -220,10 +252,14 @@ let lftClicked : Ref<boolean> = ref(true)
 let rgtClicked : Ref<boolean> = ref(false)
 
 
-setEventStEdDate()
-cultureStore.getFestivalInfo(query.value)
-setWeekOfMonth()
-showSlide()
+setEventStEdDate();
+cultureStore.getFestivalInfo(query.value);
+setWeekOfMonth();
+
+onMounted(() => {
+  console.log('mounted')
+  showSlide();
+})
 
 </script>
 <style>

@@ -5,9 +5,9 @@
   display: flex;
   justify-content: center;
 
-  width: 100%;  
+  width: 100%;
   height: 85px;
-  
+
   box-sizing: border-box;
 
   border-bottom: 1px solid rgba(212, 212, 212, 0.919);
@@ -16,7 +16,7 @@
     margin-top: 10px;
     //margin-left: 100px;
     font-size: 33px;
-    cursor:pointer;
+    cursor: pointer;
 
     font-family: 'Bebas Neue', cursive;
     color: $color-primary;
@@ -27,7 +27,7 @@
     font-size: 25px;
     align-items: center;
     display: flex;
-    
+
     .search {
       display: flex;
       position: relative;
@@ -54,15 +54,16 @@
         position: absolute;
         top: 7px;
         right: 50px;
-        color:rgb(155, 155, 155)
+        color: rgb(155, 155, 155)
       }
     }
+
     .tabs {
       font-size: 17px;
       display: flex;
-      
 
-      .tab-item  {
+
+      .tab-item {
         margin-bottom: 16px !important;
         margin: 0px 13px;
         cursor: pointer;
@@ -120,7 +121,7 @@ footer {
 
   padding-top: 10px;
   padding-bottom: 10px;
-  
+
   //height: 100px;
 
   .tab {
@@ -129,7 +130,7 @@ footer {
 
     .item {
       text-decoration-line: none;
-      color:rgb(68, 68, 68);
+      color: rgb(68, 68, 68);
     }
   }
 
@@ -148,6 +149,28 @@ footer {
 #home {
   position: relative;
 
+  .slide-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in;
+  }
+
+  #banner {
+    position: absolute;
+
+  }
+
+  /* 
   #banner {
     position: absolute;
     z-index: 0 !important;
@@ -168,7 +191,6 @@ footer {
   }
 
   .slideImage {
-    //500
     min-height: 100%;
     min-width: 1495px;
     width: 100%;
@@ -182,7 +204,6 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     animation-fill-mode: forwards;
-    //animation-name: zoom;
     animation-duration: 4s;
     animation-iteration-count: 1;
   }
@@ -226,14 +247,14 @@ footer {
       to{
           opacity:0;
       }
-  }
+  } */
 
   .info {
     position: fixed;
   }
 
   .title {
-    color:rgb(255, 252, 247);
+    color: rgb(255, 252, 247);
     font-size: 500%;
     z-index: 0;
     width: 50vw;
@@ -253,7 +274,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 20px;
-    color:rgb(255, 252, 247);
+    color: rgb(255, 252, 247);
     z-index: 1;
   }
 
@@ -264,7 +285,7 @@ footer {
   .plus {
     font-weight: bold;
     font-size: 12px;
-    color:rgb(68, 68, 68);
+    color: rgb(68, 68, 68);
     text-decoration: none;
 
     &:hover {
@@ -273,6 +294,7 @@ footer {
     }
   }
 }
+
 //home - area
 
 .baro {
@@ -296,13 +318,13 @@ footer {
   z-index: 1;
   width: 720px;
 
-  .semi-title{
+  .semi-title {
     margin-left: 22px;
   }
 
   //background-color: #edeef2;
 
-  .wrapper{
+  .wrapper {
     //margin-top: 85px;
     position: absolute;
     width: 850px;
@@ -315,7 +337,7 @@ footer {
 
 .semi-title {
   ion-icon {
-    color:rgb(182, 144, 75);
+    color: rgb(182, 144, 75);
   }
 }
 
@@ -339,7 +361,7 @@ footer {
   margin: 10px;
   align-items: center;
 
-  .btn{
+  .btn {
     box-sizing: border-box;
     display: flex;
     margin: 4px;
@@ -350,25 +372,27 @@ footer {
     background-color: lightgray;
   }
 
-  .area-info{
+  .area-info {
     display: inline-block;
     text-align: left;
     margin-left: 7px;
-    color:rgb(68, 68, 68);
+    color: rgb(68, 68, 68);
     align-items: center;
 
     .baro-sm {
       display: flex;
     }
 
-    .go-area{
+    .go-area {
       align-items: center;
     }
   }
+
   .area-txt {
     font-size: 14px;
     margin-bottom: 3px;
   }
+
   ion-icon {
     font-size: 15px;
   }
@@ -376,7 +400,7 @@ footer {
 
 //home - festival info
 .white-box {
-  img{
+  img {
     width: 800px;
     height: 600px;
   }
@@ -389,14 +413,15 @@ footer {
     right: 50px;
     z-index: 1;
 
-    img{
+    img {
       width: 800px;
       height: 600px;
     }
   }
+
   .week-festival {
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     transform: translateX(-400px);
     position: absolute;
   }
@@ -404,40 +429,45 @@ footer {
 
 .week-festival {
   z-index: 2;
-  
+
   .semi-title {
     position: absolute;
     top: 45px;
     left: -22px;
   }
+
   #content {
     width: 750px;
     margin-top: -10px;
   }
+
   .body {
     margin-top: 10px;
     justify-content: center;
     display: flex;
-     
+
     .clicked {
       color: lightgray;
-      pointer-events : none;
+      pointer-events: none;
       box-shadow: none;
     }
 
-    .date{
+    .date {
       color: $color-primary;
     }
 
     .card {
-      height:280px;
+      height: 280px;
+
       .card-img-top {
         height: 140px;
         width: 208px;
-      }  
+      }
+
       .card-title {
         font-size: 16px;
       }
+
       .card-text {
         font-size: 13px;
       }
@@ -468,6 +498,7 @@ footer {
     transform: translateX(0px);
     transition: all .6s;
   }
+
   .go-rgt {
     transform: translateX(-396px);
     transition: all .6s;
@@ -483,22 +514,26 @@ footer {
     border-radius: 50%;
     padding: 0 6px;
     box-shadow: 0px 1px 3px rgb(213, 213, 213);
-    
+
     height: 40px;
     cursor: pointer;
   }
-  @media (min-width: 1495px){
-    .lft{
+
+  @media (min-width: 1495px) {
+    .lft {
       left: -50px;
     }
+
     .rgt {
       right: 55px;
     }
   }
+
   .lft {
     padding-top: 3px;
     padding-right: 10px;
   }
+
   .rgt {
     padding-top: 3px;
     padding-left: 10px;
@@ -518,7 +553,7 @@ footer {
   }
 
   .go-btn {
-    position:absolute;
+    position: absolute;
     border-radius: 80px;
     background-color: white;
     top: 30px;
@@ -554,7 +589,7 @@ footer {
     height: 30px;
     width: 90px;
   }
-  
+
   button:hover {
     border: 1px solid #2c3d80;
     background-color: #2c3d80;
@@ -568,7 +603,7 @@ footer {
   }
 }
 
-.now-area{
+.now-area {
   margin-top: 30px;
 
   .title {
@@ -577,7 +612,7 @@ footer {
   }
 
   .list-info {
-    border-bottom: 1px solid lightgray; 
+    border-bottom: 1px solid lightgray;
     width: 600px;
     height: 35px;
   }
@@ -600,14 +635,15 @@ footer {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
   }
-  .card{
+
+  .card {
     width: 600px;
   }
 
   .card-group {
-        .addr {
-          color: gray;
-        }
+    .addr {
+      color: gray;
+    }
   }
 
 }
@@ -623,7 +659,7 @@ footer {
   margin-top: 40px;
   padding: 20px;
 
-  .category{
+  .category {
     font-size: 14px;
     line-height: 25px;
 
@@ -632,6 +668,7 @@ footer {
       padding: 2px 3px;
       display: inline-block;
     }
+
     .item:hover {
       background-color: rgb(223, 223, 223);
       border-radius: 50px;
@@ -644,7 +681,7 @@ footer {
     border-radius: 50px;
   }
 
-  .cat-wrapper{
+  .cat-wrapper {
     display: inline-block;
     margin: 5px;
   }
@@ -653,9 +690,11 @@ footer {
     border-top: 0.5px solid lightgray;
     border-bottom: 0.5px solid lightgray;
   }
+
   .cat2-area {
     border-bottom: 0.5px solid lightgray;
   }
+
   .hide {
     display: none;
   }
@@ -665,8 +704,9 @@ footer {
 .top {
   margin-top: 30px;
 }
+
 .search-area {
-  display:flex;
+  display: flex;
   //border: 1px solid lightgray;
   border-radius: 50px;
   align-items: center;
@@ -682,15 +722,18 @@ footer {
     padding-right: 10px;
     width: 430px;
     font-size: 15px;
-    .tag{
-      cursor:pointer;
+
+    .tag {
+      cursor: pointer;
       display: inline-block;
       margin: 5px 8px;
       border: 1px solid #e7e8ed;
       border-radius: 50px;
       padding: 3px 8px;
     }
-    .tag:hover, .clicked {
+
+    .tag:hover,
+    .clicked {
       background-color: #3b487a;
       border: 1px solid #3b487a;
       color: white;
@@ -698,13 +741,15 @@ footer {
 
   }
 }
+
 .festival-title {
   font-size: 25px;
 }
 
-.calendar{
+.calendar {
   border-right: 1px solid #e7e8ed;
   width: 400px;
+
   .vc-container {
     border: none;
     margin-left: 30px;
@@ -717,11 +762,13 @@ footer {
     padding: 7px;
     border-bottom: 2px solid #e7e8ed;
   }
+
   .totalCnt {
     margin-top: 10px;
     font-size: 17px;
     padding: 5px;
   }
+
   .festival {
     margin: 30px;
     display: grid;
@@ -730,21 +777,23 @@ footer {
 
   .card {
     box-sizing: border-box;
+
     .card-img-top {
       height: 158.75px;
       width: 272px;
-    }  
+    }
   }
 }
 
-.card-title { 
-  font-size: 19px; 
+.card-title {
+  font-size: 19px;
 }
 
 //leisure view 
 
 .leisure-header {
   margin-top: 30px;
+
   .title {
     font-size: 25px;
   }
@@ -771,7 +820,7 @@ footer {
 
   .clicked:hover {
     border-bottom: 4px solid #3b487a;
-  }  
+  }
 }
 
 .leisure-contents {
@@ -792,7 +841,7 @@ footer {
     padding-bottom: 15px;
     border-bottom: 1px solid #d2d3d8;
   }
-  
+
   .categories {
     display: flex;
     font-size: 14px;
@@ -800,7 +849,7 @@ footer {
 
     .selectedTags {
       display: flex;
-      
+
       .tag {
         margin-right: 10px;
       }
@@ -833,10 +882,11 @@ footer {
 
     .card {
       box-sizing: border-box;
+
       .card-img-top {
         height: 158.75px;
         width: 272px;
-      }  
+      }
     }
   }
 
@@ -847,7 +897,7 @@ footer {
     padding: 10px;
     transition: all .5s;
 
-    .subtag{
+    .subtag {
       display: inline-block;
       background-color: white;
       border: 1px solid #f7f7f7;
@@ -856,6 +906,7 @@ footer {
       margin: 2px 5px;
       padding: 1px 10px;
     }
+
     .clicked {
       background-color: #3b487a;
       color: white;
@@ -870,7 +921,7 @@ footer {
   .semi-content {
     padding: 7px;
     display: flex;
-    
+
     .totalCnt {
       margin-top: 9px;
     }
@@ -879,26 +930,29 @@ footer {
       position: absolute;
       right: 0;
     }
+
     .clicked {
       border-radius: 50px;
       background-color: #edeef2;
-    } 
-     
+    }
+
   }
 
   .dropdown-menu {
     width: 500px;
     padding-left: 10px;
     font-size: 14px;
+
     div {
       display: inline-block;
     }
+
     button {
       border-radius: 50px;
     }
 
-    button:focus { 
-      outline: 0; 
+    button:focus {
+      outline: 0;
     }
   }
 
@@ -908,13 +962,13 @@ footer {
 }
 
 //v-calendar
-.vc-container{
+.vc-container {}
 
-}
 .vc-pane {
   width: 300px;
   height: 280px;
 }
+
 .vc-day {
   height: 40px;
 }
@@ -922,16 +976,18 @@ footer {
 // Detail View
 
 .detail-container {
-  .back{
+  .back {
     font-size: 25px;
     color: rgb(155, 155, 155);
     padding: 5px;
     //border: 1px solid rgb(155, 155, 155);
   }
+
   .nav {
     margin: 30px;
     font-size: 14px;
   }
+
   .detail-top {
     //margin-top: 10px;
     text-align: center;
@@ -955,7 +1011,7 @@ footer {
   .detail-body {
     padding: 30px;
 
-    .images{
+    .images {
       margin-top: 100px;
       display: flex;
     }
@@ -977,7 +1033,7 @@ footer {
 
     .detail-info {
       margin-top: 40px;
-      
+
     }
   }
 
@@ -993,7 +1049,7 @@ footer {
       margin: 10px;
       border-top: 2px solid #e7e8ed;
       border-bottom: 2px solid #e7e8ed;
-      
+
 
       tr {
         border-bottom: 1px solid #e7e8ed;
@@ -1004,7 +1060,7 @@ footer {
         width: 90px;
         padding: 7px;
       }
-      
+
       td {
         padding: 7px;
       }
@@ -1013,7 +1069,7 @@ footer {
 }
 
 //search page
-#search{
+#search {
   .top {
     font-size: 18px;
     border-bottom: 2px solid black;
@@ -1031,8 +1087,10 @@ footer {
     padding: 10px;
     border-bottom: 1px solid #e7e8ed;
   }
+
   .classify {
     margin-left: 350px;
+
     .item {
       cursor: pointer;
     }
@@ -1041,7 +1099,8 @@ footer {
       font-weight: bold;
     }
   }
-  .list{
+
+  .list {
     margin-top: 15px;
   }
 
@@ -1055,20 +1114,21 @@ footer {
       border-top: 1px solid #d2d3d8;
       border-bottom: 1px solid #d2d3d8;
     }
-    .area-item{
-      cursor:pointer;
+
+    .area-item {
+      cursor: pointer;
       font-size: 14px;
       display: inline-block;
       margin: 4px 2px;
       border-radius: 50px;
 
-      .clicked{
+      .clicked {
         background-color: #3b487a;
         color: white;
       }
     }
 
-    .area{
+    .area {
       padding: 2px 8px;
     }
 
@@ -1087,20 +1147,22 @@ footer {
 
 
 @media (max-width: 1495px) {
+
   //home
   #home {
     display: grid;
     grid-template-rows: 500px;
 
     #banner {
-      height: 500px;
+      /* height: 500px;
       top: 0;
 
-      .slides{
+      .slides {
         position: absolute;
         top: 0;
         left: 0;
       }
+
       .slideImage {
         min-height: 500px;
         position: absolute;
@@ -1116,7 +1178,7 @@ footer {
         .overview {
           width: 300px;
         }
-      }
+      } */
     }
 
     #content {
@@ -1132,12 +1194,12 @@ footer {
   .week-festival {
     margin-top: 500px;
     background-color: lightgray;
-    
+
     .body {
       margin-bottom: 30px;
     }
 
-    .semi-title{
+    .semi-title {
       left: 290px;
     }
 
@@ -1147,7 +1209,7 @@ footer {
   }
 
   .area-wrap {
-    position:absolute;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 900px;
@@ -1157,9 +1219,7 @@ footer {
     }
   }
 
-  .area-btns {
-    
-  }
+  .area-btns {}
 
   .cards {
     left: 10px;
