@@ -11,5 +11,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
 const pinia = createPinia()
+const app = createApp(App);
 
-createApp(App).use(pinia).use(router).use(VueSplide).use(Paginate).use(BootstrapVue3).use(VCalendar, {}).mount('#app')
+app.use(pinia).use(router).use(VueSplide).use(Paginate).use(BootstrapVue3).use(VCalendar, {}).mount('#app')

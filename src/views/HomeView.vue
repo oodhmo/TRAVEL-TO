@@ -196,7 +196,7 @@ const setEventStEdDate = () => {
   newStDate.setDate((day === 0 ? newStDate.getDate()-6 : newStDate.getDate()-day+1))
   newEdDate.setDate((day !== 0 ? newEdDate.getDate()-day+7 : newEdDate.getDate()))
 
-  query.value.eventStartDate = `${newStDate.getFullYear()}${newStDate.getMonth()+1}${newStDate.getDate()}`
+  query.value.eventStartDate = `${newStDate.getFullYear()}${newStDate.getMonth() < 9 ? '0'+(newStDate.getMonth()+1) : newStDate.getMonth()+1}${newStDate.getDate()}`
   //query.value.eventEndDate = newEdDate.getMonth() + 1 < 10 ? `${newEdDate.getFullYear()}0${newEdDate.getMonth()+1}0${newEdDate.getDate()}` : `${newEdDate.getFullYear()}${newEdDate.getMonth()+1}${newEdDate.getDate()}`
 
   console.log(query.value.eventStartDate)
@@ -207,9 +207,9 @@ const setEventStEdDate = () => {
 const setStEdDateForm = (st:string, ed:string) : string => {
   let datearr:Array<string> = [st, ed]
   datearr.forEach((date:string, idx:number)=>{
-    let y: string = date.substr(0, 4)
-    let m: string = date.substr(4, 2)
-    let d: string = date.substr(6, 2)
+    let y: string = date.substring(0, 4)
+    let m: string = date.substring(4, 2)
+    let d: string = date.substring(6, 2)
     datearr[idx] = `${y}.${m}.${d}`
   })
   return `${datearr[0]} ~ ${datearr[1]}`
