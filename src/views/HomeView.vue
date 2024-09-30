@@ -150,8 +150,6 @@ let slide : Ref<any> = ref({
 let current : number = 0 
 
 const showSlide = () => {
-  // const slideContainer: HTMLElement | null = document.querySelector('.slide-container');
-  
   setInterval(()=>{
     current++
     
@@ -159,30 +157,20 @@ const showSlide = () => {
       current = 0
     }
 
+    const area = areaCodes[current];
+
     slide.value = { 
-      url: `../assets/images/background(${areaCodes[current].imgUrl})`,
-      name: areaCodes[current].text === '전체' ? '?' : areaCodes[current].text2,
+      url: '/images/background/beach.jpg',
+      name: area.text === '전체' ? '?' : area.text2,
+      // new URL(`../assets/images/background/${area.imgUrl}`, import.meta.url).href,
     };
     console.log('slide.value', slide.value.url)
-
-    /* if(areaCodes[current].text === '전체') {
-      slide.value = { 
-        url: require(`@/assets/images/${areaCodes[current].imgUrl}`),
-        name: '?',
-      }
-    }
-    else {
-      slide.value = { 
-        url: require(`@/assets/images/${areaCodes[current].imgUrl}`),
-        name: areaCodes[current].text2,
-      }
-    } */
   }, 4000)
 }
 
 const setBackgroundImage = computed(()=>{
   return { 
-    backgroundImage: "url(`../assets/images/background(${areaCodes[current].imgUrl})`)"
+    backgroundImage: "url('/images/background/beach.jpg')"
   }
 })
 

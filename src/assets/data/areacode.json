@@ -10,103 +10,103 @@
       "text": "서울",
       "text2": "서울",
       "code": "1",
-      "imgUrl": "https://images.unsplash.com/photo-1535189043414-47a3c49a0bed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80"
+      "imgUrl": "seoul.jpg"
     },
     {
       "text": "인천",
       "text2": "인천",
       "code": "2",
-      "imgUrl": "https://images.unsplash.com/photo-1585893656971-d3d932cada08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "imgUrl": "incheon.jpg"
     },
     {
       "text": "대전",
       "text2": "대전",
       "code": "3",
-      "imgUrl": "https://images.unsplash.com/photo-1526199119161-4be1e3368d52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "imgUrl": "daejeon.jpg"
     },
     {
       "text": "대구",
       "text2": "대구",
       "code": "4",
-      "imgUrl":"https://images.unsplash.com/photo-1549898395-045c8fa2883b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "imgUrl":"daegu.jpg"
     },
     {
       "text": "광주",
       "text2": "광주",
       "code": "5",
-      "imgUrl": "https://images.unsplash.com/photo-1592899940281-0ba5f29175b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "imgUrl": "gwangju.jpg"
     },
     {
       "text": "부산",
       "text2": "부산",
       "code": "6",
-      "imgUrl": "https://images.unsplash.com/photo-1638591751482-1a7d27fcea15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+      "imgUrl": "busan.jpg"
     },
     {
       "text": "울산",
       "text2": "울산",
       "code": "7",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/03/22/10/05/homigot-4956522_960_720.jpg"
+      "imgUrl": "ulsan.jpg"
     },
     {
       "text": "세종",
       "text2": "세종",
       "code": "8",
-      "imgUrl": "https://cdn.pixabay.com/photo/2019/07/12/05/39/sejong-city-4331956_960_720.jpg"
+      "imgUrl": "sejong.jpg"
     },
     {
       "text": "경기도",
       "text2": "경기",
       "code": "31",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/06/03/06/36/the-flat-design-island-5253681_960_720.jpg"
+      "imgUrl": "gyeonggi.jpg"
     },
     {
       "text": "강원도",
       "text2": "강원",
       "code": "32",
-      "imgUrl": "https://images.unsplash.com/photo-1586327033781-0364562c856a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      "imgUrl": "gangwon.jpg"
     },
     {
       "text": "충청북도",
       "text2": "충북",
       "code": "33",
-      "imgUrl": "https://images.unsplash.com/photo-1503932953040-b6085c4fd82e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+      "imgUrl": "chungbuk.jpg"
     },
     {
       "text": "충청남도",
       "text2": "충남",
       "code": "34",
-      "imgUrl": "https://images.unsplash.com/photo-1651788264460-4acc64daef1f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "imgUrl": "chungnam.jpg"
     },
     {
       "text": "경상북도",
       "text2": "경북",
       "code": "35",
-      "imgUrl": "https://images.unsplash.com/photo-1653632445002-bd761318db53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "imgUrl": "gyeongbuk.jpg"
     },
     {
       "text": "경상남도",
       "text2": "경남",
       "code": "36",
-      "imgUrl": "https://images.unsplash.com/photo-1606666475478-9efa023e900a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "imgUrl": "gyeongnam.jpg"
     },
     {
       "text": "전라북도",
       "text2": "전북",
       "code": "37",
-      "imgUrl": "https://images.unsplash.com/photo-1548115184-bc6544d06a58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "imgUrl": "jeonbuk.jpg"
     },
     {
       "text": "전라남도",
       "text2": "전남",
       "code": "38",
-      "imgUrl": "../images/background/junnam.jpg"
+      "imgUrl": "junnam.jpg"
     },
     {
       "text": "제주도",
       "text2": "제주",
       "code": "39",
-      "imgUrl": "https://images.unsplash.com/photo-1609766418204-94aae0ecfdfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+      "imgUrl": "jeju.jpg"
     }
   ]
 }
