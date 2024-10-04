@@ -141,16 +141,28 @@ const tourStore = useTourStore()
 
 const router = useRouter()
 
-//banner
+// Background Image Slide 
 let slide : Ref<any> = ref({
-  url: areaCodes[0].imgUrl,
+  url: `images/background/${areaCodes[0].imgUrl}`,
   name: '?',
 })
 
 let current : number = 0 
 
-const showSlide = () => {
-  setInterval(()=>{
+const preloadImage = (url: string): Promise<any> => {
+  // 이미지 변경 시 깜빡임 문제 -> 미리 다음 이미지 불러오기
+  return new Promise((resolve) => {
+    const img = new Image();
+    console.log(url)
+    img.src = url;
+    img.onload = () => resolve(img);
+  })
+}
+
+const showSlide = async () => {
+  await preloadImage(`images/background/${areaCodes[1].imgUrl}`);
+
+  setInterval(async () => {
     current++
     
     if(current >= areaCodes.length) {
@@ -158,19 +170,20 @@ const showSlide = () => {
     }
 
     const area = areaCodes[current];
+    const url = `images/background/${area.imgUrl}`
+
+    await preloadImage(url);
 
     slide.value = { 
-      url: '/images/background/beach.jpg',
+      url: url,
       name: area.text === '전체' ? '?' : area.text2,
-      // new URL(`../assets/images/background/${area.imgUrl}`, import.meta.url).href,
     };
-    console.log('slide.value', slide.value.url)
   }, 4000)
 }
 
 const setBackgroundImage = computed(()=>{
   return { 
-    backgroundImage: "url('/images/background/beach.jpg')"
+    backgroundImage: `url("${slide.value.url}")`
   }
 })
 
