@@ -148,6 +148,7 @@ footer {
 
 #home {
   position: relative;
+  height: 100%;
 
   .slide-container {
     position: relative;
@@ -159,106 +160,61 @@ footer {
     justify-content: center;
     text-align: center;
     color: #fff;
-    
+
     background-size: cover;
     background-position: center;
     transition: background-image 1s ease-in-out;
   }
 
-  #banner {
-    position: absolute;
-
+  .home-wrapper {
+    padding-top: 84px;
+    width: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  /* 
-  #banner {
-    position: absolute;
-    z-index: 0 !important;
-    padding: 15% 13%;
+  .banner,
+  .content {
+    position: relative;
   }
 
-  @media (min-width: 1495px) {
-    #content-wrapper {
-      position: absolute;
-      z-index: 1 !important;
-      right: 0;
-      margin: 8% 3%;
-    }
-
-    .slideImage {
-      position: fixed;
-    }
-  }
-
-  .slideImage {
-    min-height: 100%;
-    min-width: 1495px;
-    width: 100%;
-    height: auto;
-    top: 0;
+  .banner {
+    width: 340px;
     left: 0;
-    
-    pointer-events: none;
- 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation-fill-mode: forwards;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
   }
-
-  @keyframes zoom{
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.1);
-    }
-  }
-
-  .fade-enter-active{
-    animation-name: fadeEnter;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-  }
-  .fade-move{
-      transition: all 1s;
-  }
-  .fade-leave-active{
-      animation-name: fadeLeave;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
-      position:absolute;
-  }
-
-  @keyframes fadeEnter{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-  }
-  @keyframes fadeLeave{
-      from{
-          opacity:1;
-      }
-      to{
-          opacity:0;
-      }
-  } */
 
   .info {
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
 
   .title {
     color: rgb(255, 252, 247);
     font-size: 500%;
     z-index: 0;
-    width: 50vw;
+
     line-height: 100px;
+    text-align: left;
+  }
+
+  .content {
+    width: calc(100% - 340px);
+
+  }
+
+
+  // festival info
+  .white-box {
+    display: flex;
+    justify-content: right;
+
+    img {
+      width: 800px;
+      height: 600px;
+    }
   }
 
   @media (min-width: 1495px) {
@@ -293,6 +249,8 @@ footer {
       color: $color-primary;
     }
   }
+
+
 }
 
 //home - area
@@ -398,19 +356,8 @@ footer {
   }
 }
 
-//home - festival info
-.white-box {
-  img {
-    width: 800px;
-    height: 600px;
-  }
-}
-
 @media (min-width: 1495px) {
   .white-box {
-    position: absolute;
-    top: 0;
-    right: 50px;
     z-index: 1;
 
     img {
