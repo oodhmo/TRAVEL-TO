@@ -19,12 +19,22 @@
         </div>
         <div class="content">
           <div class="white-box">
-            <img src="@/assets/images/white-box.png"/>
-          </div>
-          <div class="week-festival">
-            <div class="fest-content">
-              <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
+            <div class="info-set">
+              <div class="week-festival">
+                <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
+                <div class="fest-content">
+                  <div class="cards-wrapper">
+                    <div class="cards">
+                      <content-card v-for="item in cultureStore.festivalList" :key="item.contentid" :title="item.title"
+                        :imgUrl="item.firstimage" :stDate="item.eventstartdate" :edDate="item.eventenddate"
+                        :addr="item.addr1" :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -119,6 +129,7 @@ import moment from 'moment'
 import IQuery from '@/types/query'
 import { useRouter } from 'vue-router'
 import BottomFooter from '@/components/BottomFooter.vue'
+import ContentCard from '@/components/ContentCard.vue'
 
 const areaCodes = require('@/assets/data/areacode.json').AREA
 
@@ -127,7 +138,7 @@ const tourStore = useTourStore()
 
 const router = useRouter()
 
-// Background Image Slide 
+/*******  배경화면 슬라이드 *******/
 let slide: Ref<any> = ref({
   url: `images/background/${areaCodes[0].imgUrl}`,
   name: '?',
@@ -139,7 +150,7 @@ const preloadImage = (url: string): Promise<any> => {
   // 이미지 변경 시 깜빡임 문제 -> 미리 다음 이미지 불러오기
   return new Promise((resolve) => {
     const img = new Image();
-    console.log(url)
+
     img.src = url;
     img.onload = () => resolve(img);
   })
@@ -168,12 +179,13 @@ const showSlide = async () => {
 }
 
 const setBackgroundImage = computed(() => {
+  console.log(slide.value.url)
   return {
     backgroundImage: `url("${slide.value.url}")`
   }
 })
 
-//지역 바로가기 이벤트
+/******* 지역 바로 가기 이벤트 *******/
 const pageLinkToTour = (code: string) => {
   router.push('/tour')
   tourStore.tourAreaCode = code

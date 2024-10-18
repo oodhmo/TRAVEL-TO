@@ -201,21 +201,21 @@ footer {
   }
 
   .content {
-    width: calc(100% - 340px);
-
+    color: black;
   }
 
 
   // festival info
-  .white-box {
+  /* .white-box {
     display: flex;
     justify-content: right;
+    width: 800px;
 
     img {
       width: 800px;
       height: 600px;
     }
-  }
+  } */
 
   @media (min-width: 1495px) {
     .app-description {
@@ -358,37 +358,38 @@ footer {
 
 @media (min-width: 1495px) {
   .white-box {
+    position: relative;
     z-index: 1;
+    background-image: url("@/assets/images/element/white-box.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 750px;
+    height: 600px;
 
-    img {
-      width: 800px;
-      height: 600px;
+    .info-set {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 680px;
+      height: 520px;
+      text-align: left;
     }
   }
 
-  .week-festival {
+  /* .week-festival {
     top: 0;
     right: 0;
     transform: translateX(-400px);
     position: absolute;
-  }
+  } */
 }
 
 .week-festival {
   z-index: 2;
 
-  .semi-title {
-    position: absolute;
-    top: 45px;
-    left: -22px;
-  }
-
-  #content {
-    width: 750px;
-    margin-top: -10px;
-  }
-
-  .body {
+  .fest-content {
     margin-top: 10px;
     justify-content: center;
     display: flex;
@@ -427,17 +428,16 @@ footer {
     }
   }
 
-  .cards {
+  .cards-wrapper {
     z-index: 0;
-    position: relative;
+    width: 100%;
     overflow-x: hidden;
-    display: flex;
-    margin: 30px;
-    top: 40px;
-    width: 700px;
 
-    .card-deck {
-      margin: 5px;
+    .cards {
+      z-index: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 1100px;
     }
   }
 
