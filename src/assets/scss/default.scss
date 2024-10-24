@@ -228,8 +228,19 @@ footer {
     z-index: 1;
   }
 
-  .semi-title {
-    font-size: 20px;
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+
+    .semi-title {
+      font-size: 20px;
+    }
+
+    .go-culture {
+      margin-left: auto;
+      color: $color-secondary;
+      font-size: 13px;
+    }
   }
 
   .plus {
@@ -240,7 +251,7 @@ footer {
 
     &:hover {
       cursor: pointer;
-      color: $color-primary;
+      color: $color-primary-faded;
     }
   }
 
@@ -374,8 +385,6 @@ footer {
 }
 
 .week-festival {
-  z-index: 2;
-
   .fest-content {
     margin-top: 10px;
     justify-content: center;
@@ -439,12 +448,6 @@ footer {
     }
   }
 
-  @media (min-width: 1495px) {
-    .cards {
-      right: 55px;
-    }
-  }
-
   .cards-wrapper {
     z-index: 0;
     width: 100%;
@@ -455,6 +458,7 @@ footer {
       display: flex;
       justify-content: space-between;
       width: 1100px;
+      transition: transform 0.5s ease;
     }
   }
 
@@ -483,13 +487,6 @@ footer {
     position: absolute;
     right: 0;
     top: 0px;
-  }
-
-  .go-culture {
-    position: absolute;
-    top: 49px;
-    right: 40px;
-    width: 140px;
   }
 
   .go-btn {
@@ -1141,10 +1138,6 @@ footer {
 
     .semi-title {
       left: 290px;
-    }
-
-    .go-culture {
-      right: 240px;
     }
   }
 

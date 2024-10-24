@@ -21,7 +21,11 @@
           <div class="white-box">
             <div class="info-set">
               <div class="week-festival">
-                <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
+                <div class="title-wrapper">
+                  <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
+                  <router-link to="/culture" class="go-culture plus">축제/행사 더보기 +</router-link>
+                </div>
+
                 <div class="fest-content">
                   <div :class="['arrow-btn lft', { 'clicked': lftClicked }]" @click="() => {
                     lftClicked = !lftClicked
@@ -37,7 +41,8 @@
                     </div>
                   </div>
                   <div class="arrow-btn"
-                    :class="['arrow-btn rgt', { 'clicked': rgtClicked || cultureStore.festivalList.length < 4 }]" @click="() => {
+                    :class="['arrow-btn rgt', { 'clicked': rgtClicked || cultureStore.festivalList.length < 4 }]"
+                    @click="() => {
                       lftClicked = !lftClicked
                       rgtClicked = !rgtClicked
                       slideRight()
@@ -46,9 +51,7 @@
                 </div>
               </div>
               <div class="areas">
-                <div class="semi-title">
-                  어디로 가볼까?🎏
-                </div>
+                <div class="semi-title">지역별 여행지 🚗</div>
               </div>
             </div>
 
@@ -255,7 +258,7 @@ const wrapperWidth = 680;
 const cardListWidth = 1100;
 
 const slideRight = () => {
-  translateX.value = -(cardListWidth-wrapperWidth);
+  translateX.value = -(cardListWidth - wrapperWidth);
 }
 
 const slideLeft = () => {
