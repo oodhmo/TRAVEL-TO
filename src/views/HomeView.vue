@@ -23,14 +23,31 @@
               <div class="week-festival">
                 <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
                 <div class="fest-content">
+                  <div :class="['arrow-btn lft', { 'clicked': lftClicked }]" @click="() => {
+                    lftClicked = !lftClicked
+                    rgtClicked = !rgtClicked
+                    slideLeft()
+                  }"><ion-icon name="chevron-back-outline"></ion-icon>
+                  </div>
                   <div class="cards-wrapper">
-                    <div class="cards">
+                    <div class="cards" :style="{ transform: `translateX(${translateX}px)` }">
                       <content-card v-for="item in cultureStore.festivalList" :key="item.contentid" :title="item.title"
                         :imgUrl="item.firstimage" :stDate="item.eventstartdate" :edDate="item.eventenddate"
                         :addr="item.addr1" :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
                     </div>
                   </div>
-
+                  <div class="arrow-btn"
+                    :class="['arrow-btn rgt', { 'clicked': rgtClicked || cultureStore.festivalList.length < 4 }]" @click="() => {
+                      lftClicked = !lftClicked
+                      rgtClicked = !rgtClicked
+                      slideRight()
+                    }"><ion-icon name="chevron-forward-outline"></ion-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="areas">
+                <div class="semi-title">
+                  어디로 가볼까?🎏
                 </div>
               </div>
             </div>
@@ -195,7 +212,7 @@ const pageLinkToDetail = (contentid: string | string[], contenttypeid: string) =
   router.push(`/culture/detail/${contenttypeid}/${contentid}`)
 }
 
-//0월 0주차
+//00월 0주차
 let weekOfMonth: Ref<string> = ref("")
 
 const setWeekOfMonth = () => {
@@ -207,9 +224,7 @@ const setWeekOfMonth = () => {
   weekOfMonth.value = `${nowDate.month() + 1}월 ${week}주차`
 }
 
-
-
-// 축제 정보
+/******* 축제 정보 *******/
 let query: Ref<IQuery> = ref({
   pageNo: '1',
   numOfRows: 5,
@@ -228,27 +243,24 @@ const setEventStEdDate = () => {
   newEdDate.setDate((day !== 0 ? newEdDate.getDate() - day + 7 : newEdDate.getDate()))
 
   query.value.eventStartDate = `${newStDate.getFullYear()}${newStDate.getMonth() < 9 ? '0' + (newStDate.getMonth() + 1) : newStDate.getMonth() + 1}${newStDate.getDate()}`
-  //query.value.eventEndDate = newEdDate.getMonth() + 1 < 10 ? `${newEdDate.getFullYear()}0${newEdDate.getMonth()+1}0${newEdDate.getDate()}` : `${newEdDate.getFullYear()}${newEdDate.getMonth()+1}${newEdDate.getDate()}`
-
-  console.log(query.value.eventStartDate)
-  console.log(query.value.eventEndDate)
+  query.value.eventEndDate = newEdDate.getMonth() + 1 < 10 ? `${newEdDate.getFullYear()}0${newEdDate.getMonth() + 1}0${newEdDate.getDate()}` : `${newEdDate.getFullYear()}${newEdDate.getMonth() + 1}${newEdDate.getDate()}`
 }
 
-//축제 카드 날짜 form
-const setStEdDateForm = (st: string, ed: string): string => {
-  let datearr: Array<string> = [st, ed]
-  datearr.forEach((date: string, idx: number) => {
-    let y: string = date.substring(0, 4)
-    let m: string = date.substring(4, 2)
-    let d: string = date.substring(6, 2)
-    datearr[idx] = `${y}.${m}.${d}`
-  })
-  return `${datearr[0]} ~ ${datearr[1]}`
-}
-
-//축제 정보 화살표
+/******* 축제 정보 화살표 *******/
 let lftClicked: Ref<boolean> = ref(true)
 let rgtClicked: Ref<boolean> = ref(false)
+
+const translateX: Ref<number> = ref(0);
+const wrapperWidth = 680;
+const cardListWidth = 1100;
+
+const slideRight = () => {
+  translateX.value = -(cardListWidth-wrapperWidth);
+}
+
+const slideLeft = () => {
+  translateX.value = 0;
+}
 
 
 setEventStEdDate();

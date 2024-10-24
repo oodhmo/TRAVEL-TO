@@ -143,23 +143,15 @@ footer {
     background-color: rgb(222, 222, 222);
   }
 }
-
 //home
 
 #home {
-  position: relative;
-  height: 100%;
-
   .slide-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    height: 100vh;
 
     background-size: cover;
     background-position: center;
@@ -167,11 +159,13 @@ footer {
   }
 
   .home-wrapper {
+    position: relative;
     padding-top: 84px;
     width: 1250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10;
   }
 
   .banner,
@@ -377,13 +371,6 @@ footer {
       text-align: left;
     }
   }
-
-  /* .week-festival {
-    top: 0;
-    right: 0;
-    transform: translateX(-400px);
-    position: absolute;
-  } */
 }
 
 .week-festival {
@@ -393,11 +380,41 @@ footer {
     margin-top: 10px;
     justify-content: center;
     display: flex;
+    position: relative;
 
     .clicked {
       color: lightgray;
       pointer-events: none;
       box-shadow: none;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      z-index: 1;
+      background-color: white;
+      border: 1px solid rgb(231, 231, 231);
+      border-radius: 50%;
+      padding: 0 6px;
+      box-shadow: 0px 1px 3px rgb(213, 213, 213);
+      font-size: 25px;
+      height: 38px;
+      cursor: pointer !important;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lft {
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .rgt {
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .date {
@@ -451,21 +468,7 @@ footer {
     transition: all .6s;
   }
 
-  .arrow-btn {
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    font-size: 25px;
-    margin-top: 190px;
-    border: 1px solid rgb(231, 231, 231);
-    border-radius: 50%;
-    padding: 0 6px;
-    box-shadow: 0px 1px 3px rgb(213, 213, 213);
-
-    height: 40px;
-    cursor: pointer;
-  }
-
+  /* 
   @media (min-width: 1495px) {
     .lft {
       left: -50px;
@@ -474,17 +477,7 @@ footer {
     .rgt {
       right: 55px;
     }
-  }
-
-  .lft {
-    padding-top: 3px;
-    padding-right: 10px;
-  }
-
-  .rgt {
-    padding-top: 3px;
-    padding-left: 10px;
-  }
+  } */
 
   .bottom {
     position: absolute;
