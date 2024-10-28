@@ -10,12 +10,11 @@
         <div class="card-addr"><span class="emoji"></span>{{ props.addr }}</div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup lang='ts'>
-import { computed, defineProps, ref, Ref } from 'vue';
+import { computed, defineProps } from 'vue';
 import { dateFormat } from '@/utils/string-utils';
 import { useRouter } from 'vue-router';
 
