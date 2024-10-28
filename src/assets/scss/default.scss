@@ -143,6 +143,7 @@ footer {
     background-color: rgb(222, 222, 222);
   }
 }
+
 //home
 
 #home {
@@ -216,13 +217,9 @@ footer {
     }
   }
 
-  .app-description {
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    padding: 20px;
-    color: rgb(255, 252, 247);
-    z-index: 1;
-  }
+  .content {
+    color: black;
+  }  
 
   .title-wrapper {
     display: flex;
@@ -232,57 +229,201 @@ footer {
       font-size: 20px;
     }
 
-    .go-culture {
+    .plus {
+      font-weight: bold;
+      font-size: 12px;
+      color: rgb(68, 68, 68);
+      text-decoration: none;
+
       margin-left: auto;
       color: $color-secondary;
       font-size: 13px;
-    }
-  }
 
-  .plus {
-    font-weight: bold;
-    font-size: 12px;
-    color: rgb(68, 68, 68);
-    text-decoration: none;
+      transition: 0.2s ease;
 
-    &:hover {
-      cursor: pointer;
-      color: $color-primary-faded;
+      &:hover {
+        cursor: pointer;
+        color: $color-primary-faded;
+      }
     }
   }
 
 
-}
+  .week-festival {
+    .fest-content {
+      margin-top: 10px;
+      justify-content: center;
+      display: flex;
+      position: relative;
 
-//home - area
+      .clicked {
+        color: lightgray;
+        pointer-events: none;
+        box-shadow: none;
+      }
 
-.baro {
-  background-color: #edeef2;
-  position: relative;
-  width: 1900px;
-}
+      .arrow-btn {
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        border: 1px solid rgb(231, 231, 231);
+        border-radius: 50%;
+        padding: 0 6px;
+        box-shadow: 0px 1px 3px rgb(213, 213, 213);
+        font-size: 25px;
+        height: 38px;
+        cursor: pointer !important;
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-@media (min-width: 1495px) {
-  .area-wrap {
-    position: absolute;
-    top: 470px;
-    right: 95px;
-    margin-top: -90px;
+      .lft {
+        left: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .rgt {
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .date {
+        color: $color-primary;
+      }
+
+      .card {
+        height: 280px;
+
+        .card-img-top {
+          height: 140px;
+          width: 208px;
+        }
+
+        .card-title {
+          font-size: 16px;
+        }
+
+        .card-text {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .cards-wrapper {
+      z-index: 0;
+      width: 100%;
+      overflow-x: hidden;
+
+      .cards {
+        z-index: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 1100px;
+        transition: 0.5s ease;
+      }
+    }
+
+    .go-lft {
+      transform: translateX(0px);
+      transition: all .6s;
+    }
+
+    .go-rgt {
+      transform: translateX(-396px);
+      transition: all .6s;
+    }
+
+    /* 
+    @media (min-width: 1495px) {
+      .lft {
+        left: -50px;
+      }
+  
+      .rgt {
+        right: 55px;
+      }
+    } */
+
+    .bottom {
+      position: absolute;
+      right: 0;
+      top: 0px;
+    }
+
+    .go-btn {
+      position: absolute;
+      border-radius: 80px;
+      background-color: white;
+      top: 30px;
+      right: 100px;
+      width: 140px;
+    }
+  }
+
+  .areas {
+    margin-top: 23px;
+
+    .area-btns {
+      background-color: white;
+      padding: 13px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+    
+      .btn {
+        box-sizing: border-box;
+        display: flex;
+        margin: 4px;
+      }
+    
+      .btn:hover {
+        border: 1px solid lightgray;
+        background-color: lightgray;
+      }
+    
+      .area-info {
+        display: inline-block;
+        text-align: left;
+        margin-left: 7px;
+        color: rgb(68, 68, 68);
+        align-items: center;
+    
+        .baro-sm {
+          display: flex;
+        }
+    
+        .go-area {
+          align-items: center;
+          margin-right: 3px;
+        }
+      }
+    
+      .area-txt {
+        font-size: 14px;
+        margin-bottom: 3px;
+      }
+    
+      ion-icon {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media (min-width: 1495px) {
+    .area-wrap {
+      position: absolute;
+      top: 470px;
+      right: 95px;
+      margin-top: -90px;
+    }
   }
 }
 
 .area-wrap {
-  //height: 450px;
-  z-index: 1;
-  width: 720px;
-
-  .semi-title {
-    margin-left: 22px;
-  }
-
-  //background-color: #edeef2;
-
   .wrapper {
     //margin-top: 85px;
     position: absolute;
@@ -300,62 +441,12 @@ footer {
   }
 }
 
-.go-tour {
-  position: absolute;
-  text-decoration: none;
-  top: 8px;
-  right: 6px;
-}
-
 .mini-thumb {
   width: 40px;
   height: 40px;
 }
 
-.area-btns {
-  background-color: white;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  margin: 10px;
-  align-items: center;
 
-  .btn {
-    box-sizing: border-box;
-    display: flex;
-    margin: 4px;
-  }
-
-  .btn:hover {
-    border: 1px solid lightgray;
-    background-color: lightgray;
-  }
-
-  .area-info {
-    display: inline-block;
-    text-align: left;
-    margin-left: 7px;
-    color: rgb(68, 68, 68);
-    align-items: center;
-
-    .baro-sm {
-      display: flex;
-    }
-
-    .go-area {
-      align-items: center;
-    }
-  }
-
-  .area-txt {
-    font-size: 14px;
-    margin-bottom: 3px;
-  }
-
-  ion-icon {
-    font-size: 15px;
-  }
-}
 
 @media (min-width: 1495px) {
   .white-box {
@@ -380,121 +471,7 @@ footer {
   }
 }
 
-.week-festival {
-  .fest-content {
-    margin-top: 10px;
-    justify-content: center;
-    display: flex;
-    position: relative;
 
-    .clicked {
-      color: lightgray;
-      pointer-events: none;
-      box-shadow: none;
-    }
-
-    .arrow-btn {
-      position: absolute;
-      z-index: 1;
-      background-color: white;
-      border: 1px solid rgb(231, 231, 231);
-      border-radius: 50%;
-      padding: 0 6px;
-      box-shadow: 0px 1px 3px rgb(213, 213, 213);
-      font-size: 25px;
-      height: 38px;
-      cursor: pointer !important;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lft {
-      left: -25px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .rgt {
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .date {
-      color: $color-primary;
-    }
-
-    .card {
-      height: 280px;
-
-      .card-img-top {
-        height: 140px;
-        width: 208px;
-      }
-
-      .card-title {
-        font-size: 16px;
-      }
-
-      .card-text {
-        font-size: 13px;
-      }
-    }
-  }
-
-  .cards-wrapper {
-    z-index: 0;
-    width: 100%;
-    overflow-x: hidden;
-
-    .cards {
-      z-index: 0;
-      display: flex;
-      justify-content: space-between;
-      width: 1100px;
-      transition: transform 0.5s ease;
-    }
-  }
-
-  .go-lft {
-    transform: translateX(0px);
-    transition: all .6s;
-  }
-
-  .go-rgt {
-    transform: translateX(-396px);
-    transition: all .6s;
-  }
-
-  /* 
-  @media (min-width: 1495px) {
-    .lft {
-      left: -50px;
-    }
-
-    .rgt {
-      right: 55px;
-    }
-  } */
-
-  .bottom {
-    position: absolute;
-    right: 0;
-    top: 0px;
-  }
-
-  .go-btn {
-    position: absolute;
-    border-radius: 80px;
-    background-color: white;
-    top: 30px;
-    right: 100px;
-    width: 140px;
-    //height: 30px;
-  }
-}
 
 
 //tour

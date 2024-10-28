@@ -14,9 +14,9 @@ body {
   overflow-x:hidden;
 }
 
-#navbar {
+#layout {
   position: fixed;
-  z-index: 0;  
+  z-index: 1000;  
   order: 1;  
 }
 

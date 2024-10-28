@@ -24,7 +24,7 @@
               <div class="week-festival">
                 <div class="title-wrapper">
                   <div class="semi-title">{{ weekOfMonth }} 축제/행사는? 🎏</div>
-                  <router-link to="/culture" class="go-culture plus">축제/행사 더보기 +</router-link>
+                  <router-link to="/culture" class="plus">축제/행사 더보기 +</router-link>
                 </div>
 
                 <div class="fest-content">
@@ -52,91 +52,32 @@
                 </div>
               </div>
               <div class="areas">
-                <div class="semi-title">지역별 여행지 🚗</div>
+                <div class="title-wrapper">
+                  <div class="semi-title">지역별 여행지 🚗</div>
+                  <router-link to="/culture" class="plus">지역 더보기 +</router-link>
+                </div>
+                <div class="area-btns">
+                  <div v-for="(area, idx) in areaCodes" :key="area.code">
+                    <button class="btn" @click="pageLinkToTour(area.code)" v-if="idx < 10">
+                      <span>
+                        <img :src="require(`../../public/images/background/${area.imgUrl}`)" class="mini-thumb">
+                      </span>
+                      <div class="area-info">
+                        <div class="area-txt">{{ area.text }}</div>
+                        <div class="baro-sm">
+                          <span class="go-area sm10">바로가기</span>
+                          <ion-icon name="arrow-forward-circle"></ion-icon>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div id="content-wrapper">
-      <div class="white-box">  
-        <img src="@/assets/images/white-box.png"/>
-      </div>
-      <div class="week-festival">
-        <div id='content'>
-          <div class="semi-title">{{weekOfMonth}} 축제/행사는? 🎏</div>
-          <div class="body">
-            <div :class="['arrow-btn lft', {'clicked': lftClicked}]" @click="()=> {
-              lftClicked = !lftClicked
-              rgtClicked = !rgtClicked
-              }"><ion-icon name="chevron-back-outline"></ion-icon>
-            </div>
-
-            <div class="cards">
-              <b-card-group deck v-for="card in cultureStore.festivalList" :key="card.contentid">
-                <b-card
-                  :title="card.title"
-                  :img-src="card.firstimage"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="max-width: 13rem;"
-                  :class="['mb-2', {'go-lft': lftClicked, 'go-rgt': rgtClicked}]"
-                  @click="pageLinkToDetail(card.contentid, card.contenttypeid)"
-                >
-                  <b-card-text>
-                    <div class="date">{{setStEdDateForm(card.eventstartdate, card.eventenddate)}}</div>
-                    <div class="addr">{{card.addr1}}</div>
-                  </b-card-text>
-                </b-card>
-              </b-card-group> 
-            </div>
-
-            <div class="arrow-btn" :class="['arrow-btn rgt', {'clicked': rgtClicked || cultureStore.festivalList.length < 4}]" @click="()=> {
-              lftClicked = !lftClicked
-              rgtClicked = !rgtClicked
-              }"><ion-icon name="chevron-forward-outline"></ion-icon>
-            </div>
-          </div>
-          <div class="bottom">
-              <router-link to="/culture" class="go-culture plus">축제/행사 더보기 +</router-link>
-          </div>
-        </div>
-      </div>
-
-      <div class="area-wrap">
-        <div class="content">
-          <div class="semi-title"> 
-            지역별 여행지 🚗
-          </div>
-          <div class="plus">
-            <router-link to="/culture" class="go-tour plus">지역 더보기 +</router-link>
-          </div>
-
-          <div class="area-btns">
-            <div v-for="(area, idx) in areaCodes" :key="area.code">
-              <button class="btn" @click="pageLinkToTour(area.code)" v-if="idx<10">
-                <span>
-                  <img :src="area.imgUrl" class="mini-thumb">
-                </span>
-                <div class="area-info">
-                  <div class="area-txt">{{area.text}}</div>
-                  <div class="baro-sm">
-                    <span class="go-area sm10">바로가기</span>
-                    <ion-icon name="arrow-forward-circle"></ion-icon>
-                  </div>
-                  
-                </div>
-              </button>      
-            </div>
-          </div>
-        </div>       
-      </div>
-    </div> -->
-    <!-- <bottom-footer /> -->
   </div>
 </template>
 
@@ -200,7 +141,6 @@ const showSlide = async () => {
 }
 
 const setBackgroundImage = computed(() => {
-  console.log(slide.value.url)
   return {
     backgroundImage: `url("${slide.value.url}")`
   }
