@@ -179,37 +179,33 @@ footer {
   }
 
   .info {
+    color: $color-ivory;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
-  }
 
-  .title {
-    color: rgb(255, 252, 247);
-    font-size: 500%;
-    z-index: 0;
-
-    line-height: 100px;
-    text-align: left;
-  }
-
-  .content {
-    color: black;
-  }
-
-
-  // festival info
-  /* .white-box {
-    display: flex;
-    justify-content: right;
-    width: 800px;
-
-    img {
-      width: 800px;
-      height: 600px;
+    .title {
+      font-size: 500%;
+      z-index: 0;
+      line-height: 100px;
+      text-align: left;
     }
-  } */
+
+    .footer {
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  }
+  
+  .app-description {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1;
+    word-break: keep-all;
+  }
 
   @media (min-width: 1495px) {
     .app-description {
