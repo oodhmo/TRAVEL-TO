@@ -1,3 +1,8 @@
+/***********************************************************************************************************************
+
+                                                      NAVBAR
+
+***********************************************************************************************************************/
 .navbar {
   background-color: rgb(255, 255, 255);
   display: -webkit-box;
@@ -134,6 +139,11 @@ footer {
   background-color: rgb(222, 222, 222);
 }
 
+/***********************************************************************************************************************
+
+                                                      HOMEVIEW
+
+***********************************************************************************************************************/
 #home .slide-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +218,7 @@ footer {
   z-index: 1;
   word-break: keep-all;
 }
-@media (min-width: 1495px) {
+@media (min-width: 1350px) {
   #home .app-description {
     margin-top: 5%;
     width: 20vw;
@@ -244,18 +254,6 @@ footer {
 #home .title-wrapper .plus:hover {
   cursor: pointer;
   color: rgba(44, 61, 128, 0.6352941176);
-}
-#home .week-festival {
-  /* 
-  @media (min-width: 1495px) {
-    .lft {
-      left: -50px;
-    }
-
-    .rgt {
-      right: 55px;
-    }
-  } */
 }
 #home .week-festival .fest-content {
   margin-top: 10px;
@@ -416,7 +414,7 @@ footer {
 #home .areas .area-btns ion-icon {
   font-size: 15px;
 }
-@media (min-width: 1495px) {
+@media (min-width: 1350px) {
   #home .area-wrap {
     position: absolute;
     top: 470px;
@@ -445,7 +443,7 @@ footer {
   height: 40px;
 }
 
-@media (min-width: 1495px) {
+@media (min-width: 1350px) {
   .white-box {
     position: relative;
     z-index: 1;
@@ -960,7 +958,7 @@ footer {
                                           REACTIVITY
 
 =====================================================================*/
-@media (max-width: 1495px) {
+@media (max-width: 1350px) {
   #home {
     display: grid;
     grid-template-rows: 500px;

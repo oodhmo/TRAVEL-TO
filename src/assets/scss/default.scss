@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+
+/***********************************************************************************************************************
+
+                                                      NAVBAR
+
+***********************************************************************************************************************/
 .navbar {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -118,11 +124,8 @@ footer {
   width: 150px;
   border: 1px solid rgb(226, 226, 226);
   border-radius: 4px;
-
   padding-top: 10px;
   padding-bottom: 10px;
-
-  //height: 100px;
 
   .tab {
     text-align: left;
@@ -144,7 +147,11 @@ footer {
   }
 }
 
-//home
+/***********************************************************************************************************************
+
+                                                      HOMEVIEW
+
+***********************************************************************************************************************/
 
 #home {
   .slide-container {
@@ -208,7 +215,7 @@ footer {
     word-break: keep-all;
   }
 
-  @media (min-width: 1495px) {
+  @media (min-width: 1350px) {
     .app-description {
       margin-top: 5%;
       width: 20vw;
@@ -337,17 +344,6 @@ footer {
       transition: all .6s;
     }
 
-    /* 
-    @media (min-width: 1495px) {
-      .lft {
-        left: -50px;
-      }
-  
-      .rgt {
-        right: 55px;
-      }
-    } */
-
     .bottom {
       position: absolute;
       right: 0;
@@ -413,7 +409,7 @@ footer {
     }
   }
 
-  @media (min-width: 1495px) {
+  @media (min-width: 1350px) {
     .area-wrap {
       position: absolute;
       top: 470px;
@@ -448,7 +444,7 @@ footer {
 
 
 
-@media (min-width: 1495px) {
+@media (min-width: 1350px) {
   .white-box {
     position: relative;
     z-index: 1;
@@ -1056,7 +1052,7 @@ footer {
 =====================================================================*/
 
 
-@media (max-width: 1495px) {
+@media (max-width: 1350px) {
 
   //home
   #home {
