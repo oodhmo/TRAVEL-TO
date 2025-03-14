@@ -178,17 +178,21 @@ let query: Ref<IQuery> = ref({
 })
 
 const setEventStEdDate = () => {
-  const nowDate = new Date()
-  let newStDate = new Date(nowDate)
-  let newEdDate = new Date(nowDate)
-  const day: number = nowDate.getDay() // 일: 0, 월: 1, 화: 2, ... 토: 6
+  const nowDate = new Date();
+  let newStDate = new Date(nowDate);
+  let newEdDate = new Date(nowDate);
+  const day = nowDate.getDay(); // 일: 0, 월: 1, 화: 2, ... 토: 6
 
-  newStDate.setDate((day === 0 ? newStDate.getDate() - 6 : newStDate.getDate() - day + 1))
-  newEdDate.setDate((day !== 0 ? newEdDate.getDate() - day + 7 : newEdDate.getDate()))
+  newStDate.setDate(day === 0 ? newStDate.getDate() - 6 : newStDate.getDate() - day + 1);
+  newEdDate.setDate(day !== 0 ? newEdDate.getDate() - day + 7 : newEdDate.getDate());
 
-  query.value.eventStartDate = `${newStDate.getFullYear()}${newStDate.getMonth() < 9 ? '0' + (newStDate.getMonth() + 1) : newStDate.getMonth() + 1}${newStDate.getDate()}`
-  query.value.eventEndDate = newEdDate.getMonth() + 1 < 10 ? `${newEdDate.getFullYear()}0${newEdDate.getMonth() + 1}0${newEdDate.getDate()}` : `${newEdDate.getFullYear()}${newEdDate.getMonth() + 1}${newEdDate.getDate()}`
-}
+  const formatDate = (date: Date) => 
+    `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`;
+
+  query.value.eventStartDate = formatDate(newStDate);
+  query.value.eventEndDate = formatDate(newEdDate);
+};
+
 
 /******* 축제 정보 화살표 *******/
 let lftClicked: Ref<boolean> = ref(true)
