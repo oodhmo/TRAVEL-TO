@@ -3,6 +3,8 @@
 'TRAVEL TO # ?'는 어디론가 여행을 떠나고 싶은 막연한 생각(어디 가지, 뭐 하지 등)들을 태그(#)로 표현하고 선택함으로써 구체화해나가자는 의미로 정한 이름입니다.
 한국관광공사의 '국문 관광정보 서비스' API를 이용하여 여행정보를 제공합니다.
 
+:small_orange_diamond: [배포 페이지🚀](https://traveltotags.netlify.app/)
+
 :small_orange_diamond: DATA Source : https://www.data.go.kr/data/15101578/openapi.do
 
 :small_orange_diamond: 홈화면 이미지 출처
@@ -11,7 +13,7 @@
 
 <br>
 
-### :heavy_exclamation_mark::heavy_exclamation_mark: STILL IN DEVELOPMENT :heavy_exclamation_mark::heavy_exclamation_mark:
+#### :heavy_exclamation_mark: 지속적으로 리팩토링을 진행하고 있습니다.:heavy_exclamation_mark:
 
 <br>
 
@@ -27,7 +29,7 @@
 
 - 홈 화면: 서울~제주 이미지 슬라이드
 <img src="./src/assets/images/travel-to-1.gif">
-(gif 1.5배속)
+(1.5배속)
 
 <br>
 
@@ -35,6 +37,9 @@
 <img src="./src/assets/images/travel-to-2.gif">
 
 <br>
+
+- 가로 길이 1350px 이하일 경우 반응형 화면
+<img src="./src/assets/images/travel-to-15.png">
 
 ---
 
