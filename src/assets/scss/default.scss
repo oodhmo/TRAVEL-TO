@@ -241,6 +241,13 @@ footer {
       display: flex;
       position: relative;
 
+      .no-festival {
+        height: 270px;
+        display: flex;
+        align-items: center;
+        color: #888888;
+      }
+
       .clicked {
         color: lightgray;
         pointer-events: none;

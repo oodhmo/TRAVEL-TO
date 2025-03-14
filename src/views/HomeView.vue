@@ -27,7 +27,7 @@
                   <router-link to="/culture" class="plus">축제/행사 더보기 +</router-link>
                 </div>
 
-                <div class="fest-content">
+                <div class="fest-content" v-if="cultureStore.festivalList?.length > 0">
                   <div :class="['arrow-btn lft', { 'clicked': lftClicked }]" @click="() => {
                     lftClicked = !lftClicked
                     rgtClicked = !rgtClicked
@@ -36,9 +36,14 @@
                   </div>
                   <div class="cards-wrapper">
                     <div class="cards" :style="{ transform: `translateX(${translateX}px)` }">
-                      <content-card v-for="item in cultureStore.festivalList" :key="item.contentid" :title="item.title"
-                        :imgUrl="item.firstimage" :stDate="item.eventstartdate" :edDate="item.eventenddate"
-                        :addr="item.addr1" :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
+                      <content-card v-for="item in cultureStore.festivalList" 
+                        :key="item.contentid" 
+                        :title="item.title"
+                        :imgUrl="item.firstimage" 
+                        :stDate="item.eventstartdate" 
+                        :edDate="item.eventenddate"
+                        :addr="item.addr1" 
+                        :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
                     </div>
                   </div>
                   <div class="arrow-btn"
@@ -48,6 +53,11 @@
                       rgtClicked = !rgtClicked
                       slideRight()
                     }"><ion-icon name="chevron-forward-outline"></ion-icon>
+                  </div>
+                </div>
+                <div v-else class="fest-content">
+                  <div class="no-festival">
+                    <span>이번 주에 진행 중인 축제/행사가 없습니다.</span>
                   </div>
                 </div>
               </div>
@@ -88,7 +98,7 @@ import type { Ref } from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import { useTourStore } from '@/stores/tour'
 import moment from 'moment'
-import IQuery from '@/types/query'
+import { IQuery } from '@/types/query'
 import { useRouter } from 'vue-router'
 import BottomFooter from '@/components/BottomFooter.vue'
 import ContentCard from '@/components/ContentCard.vue'
@@ -186,7 +196,7 @@ const setEventStEdDate = () => {
   newStDate.setDate(day === 0 ? newStDate.getDate() - 6 : newStDate.getDate() - day + 1);
   newEdDate.setDate(day !== 0 ? newEdDate.getDate() - day + 7 : newEdDate.getDate());
 
-  const formatDate = (date: Date) => 
+  const formatDate = (date: Date) =>
     `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`;
 
   query.value.eventStartDate = formatDate(newStDate);
