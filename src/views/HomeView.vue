@@ -13,7 +13,7 @@
               태그(#)로 표현하고 선택함으로써 구체화해나가자는 의미로 정한 이름입니다.<br>
               <strong class="underline">한국관광공사의 '국문 관광정보 서비스' API</strong>를 이용하여 여행정보를 제공합니다.
             </div>
-            <div class="footer">
+            <div class="footer" v-if="screenWidth >= 1350">
               © 2024 Oodhmo All Rights Reserved.
             </div>
           </div>
@@ -83,7 +83,7 @@
 
 <script setup lang="ts">
 /* eslint-disable */
-import { computed, ref, watch, onMounted } from 'vue'
+import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
 import type { Ref } from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import { useTourStore } from '@/stores/tour'
@@ -206,14 +206,25 @@ const slideLeft = () => {
   translateX.value = 0;
 }
 
+/******* 반응형 관련 이벤트 *******/
+const screenWidth = ref(window.innerWidth);
+
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth;
+}
+
 
 setEventStEdDate();
 cultureStore.getFestivalInfo(query.value);
 setWeekOfMonth();
 
 onMounted(() => {
-  console.log('mounted')
   showSlide();
+  window.addEventListener('resize', updateScreenWidth);
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenWidth);
 })
 
 </script>
