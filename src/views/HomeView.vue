@@ -122,6 +122,7 @@ let slide: Ref<{ url: string; name: string; }> = ref({
 });
 
 let current: number = 0;
+let intervalId: ReturnType<typeof setInterval> | null = null;
 
 const preloadImage = (url: string): Promise<HTMLImageElement> => {
   // 이미지 변경 시 깜빡임 문제 -> 미리 다음 이미지 불러오기
@@ -136,7 +137,7 @@ const preloadImage = (url: string): Promise<HTMLImageElement> => {
 const showSlide = async (): Promise<void> => {
   await preloadImage(`/images/background/${areaCodes[1].imgUrl}`);
 
-  setInterval(async () => {
+  intervalId = setInterval(async () => {
     current++;
 
     if (current >= areaCodes.length) {
@@ -238,6 +239,10 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  if(intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
   window.removeEventListener('resize', updateScreenWidth);
 });
 </script>
