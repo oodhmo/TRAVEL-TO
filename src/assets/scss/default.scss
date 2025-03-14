@@ -13,6 +13,7 @@
 
   width: 100%;
   height: 85px;
+  min-width: 950px; // 현재 pc버전만 지원
 
   box-sizing: border-box;
 
@@ -206,6 +207,7 @@ footer {
 
     .content-card {
       background-color: white;
+      height: 275px;
     }
   }
 

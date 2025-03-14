@@ -3,6 +3,7 @@
 body, div, ul, span, h1, h2, h3, h4, h5, h6, form, input, label, button, textarea, th, td, p, a, header, footer, nav, section {
   font-family: $font-base;
   font-weight: $fw-base;
+  word-break: keep-all;
 }
 
 ul, li {
@@ -11,7 +12,8 @@ ul, li {
 
 body {
   margin: 0;
-  overflow-x:hidden;
+  min-width: 950px; // 현재 pc버전만 지원
+  // overflow-x:hidden; // 모바일 반응형 추가 시 해제
 }
 
 #layout {
