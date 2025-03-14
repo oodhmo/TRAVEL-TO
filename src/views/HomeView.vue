@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 /* eslint-disable */
-import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import type { Ref } from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import { useTourStore } from '@/stores/tour'
@@ -101,43 +101,50 @@ import { useRouter } from 'vue-router'
 import BottomFooter from '@/components/BottomFooter.vue'
 import ContentCard from '@/components/ContentCard.vue'
 
-const areaCodes = require('@/assets/data/areacode.json').AREA
+interface AreaCode {
+  code: string;
+  text: string;
+  text2: string;
+  imgUrl: string;
+};
 
-const cultureStore = useCultureStore()
-const tourStore = useTourStore()
+const areaCodes: AreaCode[] = require('@/assets/data/areacode.json').AREA;
 
-const router = useRouter()
+const cultureStore = useCultureStore();
+const tourStore = useTourStore();
+
+const router = useRouter();
 
 /*******  배경화면 슬라이드 *******/
-let slide: Ref<any> = ref({
+let slide: Ref<{ url: string; name: string; }> = ref({
   url: `images/background/${areaCodes[0].imgUrl}`,
   name: '?',
-})
+});
 
-let current: number = 0
+let current: number = 0;
 
-const preloadImage = (url: string): Promise<any> => {
+const preloadImage = (url: string): Promise<HTMLImageElement> => {
   // 이미지 변경 시 깜빡임 문제 -> 미리 다음 이미지 불러오기
   return new Promise((resolve) => {
     const img = new Image();
 
     img.src = url;
     img.onload = () => resolve(img);
-  })
-}
+  });
+};
 
-const showSlide = async () => {
+const showSlide = async (): Promise<void> => {
   await preloadImage(`/images/background/${areaCodes[1].imgUrl}`);
 
   setInterval(async () => {
-    current++
+    current++;
 
     if (current >= areaCodes.length) {
-      current = 0
+      current = 0;
     }
 
-    const area = areaCodes[current];
-    const url = `images/background/${area.imgUrl}`
+    const area: AreaCode = areaCodes[current];
+    const url: string = `images/background/${area.imgUrl}`;
 
     await preloadImage(url);
 
@@ -148,33 +155,29 @@ const showSlide = async () => {
   }, 4000)
 }
 
-const setBackgroundImage = computed(() => {
+const setBackgroundImage: Ref<{ backgroundImage: string }> = computed(() => {
   return {
     backgroundImage: `url("${slide.value.url}")`
   }
 })
 
 /******* 지역 바로 가기 이벤트 *******/
-const pageLinkToTour = (code: string) => {
+const pageLinkToTour = (code: string): void => {
   router.push('/tour')
   tourStore.tourAreaCode = code
-}
-
-const pageLinkToDetail = (contentid: string | string[], contenttypeid: string) => {
-  router.push(`/culture/detail/${contenttypeid}/${contentid}`)
-}
+};
 
 //00월 0주차
-let weekOfMonth: Ref<string> = ref("")
+let weekOfMonth: Ref<string> = ref("");
 
-const setWeekOfMonth = () => {
-  const nowDate = moment().utc(true)
-  let week: number
-  if (nowDate.month() === 0) week = nowDate.week() - moment(nowDate).startOf('month').week() + 1
-  else week = nowDate.isoWeek() - moment(nowDate).startOf('month').isoWeek() + 1
+const setWeekOfMonth = (): void => {
+  const nowDate = moment().utc(true);
+  let week: number;
+  if (nowDate.month() === 0) week = nowDate.week() - moment(nowDate).startOf('month').week() + 1;
+  else week = nowDate.isoWeek() - moment(nowDate).startOf('month').isoWeek() + 1;
 
-  weekOfMonth.value = `${nowDate.month() + 1}월 ${week}주차`
-}
+  weekOfMonth.value = `${nowDate.month() + 1}월 ${week}주차`;
+};
 
 /******* 축제 정보 *******/
 let query: Ref<IQuery> = ref({
@@ -183,9 +186,9 @@ let query: Ref<IQuery> = ref({
   eventStartDate: '',
   eventEndDate: '',
   areaCode: ''
-})
+});
 
-const setEventStEdDate = () => {
+const setEventStEdDate = (): void => {
   const nowDate = new Date();
   let newStDate = new Date(nowDate);
   let newEdDate = new Date(nowDate);
@@ -203,28 +206,27 @@ const setEventStEdDate = () => {
 
 
 /******* 축제 정보 화살표 *******/
-let lftClicked: Ref<boolean> = ref(true)
-let rgtClicked: Ref<boolean> = ref(false)
+let lftClicked: Ref<boolean> = ref(true);
+let rgtClicked: Ref<boolean> = ref(false);
 
 const translateX: Ref<number> = ref(0);
-const wrapperWidth = 680;
-const cardListWidth = 1100;
+const wrapperWidth: number = 680;
+const cardListWidth: number = 1100;
 
-const slideRight = () => {
+const slideRight = (): void => {
   translateX.value = -(cardListWidth - wrapperWidth);
-}
+};
 
-const slideLeft = () => {
+const slideLeft = (): void => {
   translateX.value = 0;
 }
 
 /******* 반응형 관련 이벤트 *******/
-const screenWidth = ref(window.innerWidth);
+const screenWidth: Ref<number> = ref(window.innerWidth);
 
-const updateScreenWidth = () => {
+const updateScreenWidth = (): void => {
   screenWidth.value = window.innerWidth;
-}
-
+};
 
 setEventStEdDate();
 cultureStore.getFestivalInfo(query.value);
@@ -233,11 +235,9 @@ setWeekOfMonth();
 onMounted(() => {
   showSlide();
   window.addEventListener('resize', updateScreenWidth);
-})
+});
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateScreenWidth);
-})
-
+});
 </script>
-<style></style>
