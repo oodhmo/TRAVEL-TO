@@ -156,7 +156,6 @@ footer {
 #home {
   .slide-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
     height: 100vh;
@@ -204,6 +203,10 @@ footer {
 
   .content {
     color: black;
+
+    .content-card {
+      background-color: white;
+    }
   }
 
   .title-wrapper {
@@ -346,8 +349,6 @@ footer {
   }
 
   .areas {
-    margin-top: 23px;
-
     .area-btns {
       background-color: white;
       padding: 13px 0;
@@ -417,6 +418,10 @@ footer {
   }
 
   @media (min-width: 1350px) {
+    .slide-container {
+      align-items: center;
+    }
+
     .home-wrapper {
       padding-top: 84px;
       display: flex;
@@ -468,28 +473,67 @@ footer {
         right: 95px;
         margin-top: -90px;
       }
+
+      .areas {
+        margin-top: 23px;
+      }
     }
   }
 
   @media (max-width: 1350px) {
-    .banner {
-      position: relative;
-      width: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 200px;
-
-      .info {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 3fr 2fr;
+    .home-wrapper {
+      .banner {
+        position: relative;
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%, 150px);
+        height: 300px;
+  
+        .info {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+        }
+  
+        .app-description {
+          width: 349px;
+        }
       }
 
-      .app-description {
-        width: 349px;
+      .content {
+        transform: translateY(25%);
+
+        .week-festival {
+          background-color: #f1f1f1;
+          padding: 30px 0;
+        }
+        
+        .fest-content {
+          padding-top: 20px;
+        }
+
+        .fest-content, .title-wrapper, .area-btns {
+          width: 80%;
+          margin: auto;
+        }
+
+        .areas {
+          padding: 25px 0;
+
+          .btn-list {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        .footer {
+          font-size: 12px;
+          color: #333;
+          padding: 30px 0px 20px 0px;
+        }
       }
     }
-
+    
     #content {
       width: 100%;
       background-color: rgb(242, 243, 246);

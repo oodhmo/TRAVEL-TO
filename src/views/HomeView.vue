@@ -36,14 +36,9 @@
                   </div>
                   <div class="cards-wrapper">
                     <div class="cards" :style="{ transform: `translateX(${translateX}px)` }">
-                      <content-card v-for="item in cultureStore.festivalList" 
-                        :key="item.contentid" 
-                        :title="item.title"
-                        :imgUrl="item.firstimage" 
-                        :stDate="item.eventstartdate" 
-                        :edDate="item.eventenddate"
-                        :addr="item.addr1" 
-                        :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
+                      <content-card v-for="item in cultureStore.festivalList" :key="item.contentid" :title="item.title"
+                        :imgUrl="item.firstimage" :stDate="item.eventstartdate" :edDate="item.eventenddate"
+                        :addr="item.addr1" :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
                     </div>
                   </div>
                   <div class="arrow-btn"
@@ -67,7 +62,7 @@
                   <router-link to="/culture" class="plus">지역 더보기 +</router-link>
                 </div>
                 <div class="area-btns">
-                  <div v-for="(area, idx) in areaCodes" :key="area.code">
+                  <div class="btn-list" v-for="(area, idx) in areaCodes" :key="area.code">
                     <button class="btn" @click="pageLinkToTour(area.code)" v-if="idx < 10">
                       <span>
                         <img :src="require(`../../public/images/background/${area.imgUrl}`)" class="mini-thumb">
@@ -84,6 +79,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="footer" v-if="screenWidth < 1350">
+            © 2024 Oodhmo All Rights Reserved.
           </div>
         </div>
       </div>
