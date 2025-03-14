@@ -1,0 +1,50 @@
+@import '../variables.scss';
+
+.content-card {
+  width: 200px;
+  height: 270px;
+  border: 1px solid lightgray;
+  border-radius: 13px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  .thumb {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .texts {
+    padding: 5% 8%;
+
+    .card-detail {
+      margin-top: 3px;
+    }
+
+    .card-title, .card-addr {
+      // 말줄임
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: $fw-bold;
+    }
+
+    .card-period {
+      font-size: 13px;
+      color: $color-primary;
+    }
+
+    .card-addr {
+      font-size: 15px;
+    }
+  }
+}

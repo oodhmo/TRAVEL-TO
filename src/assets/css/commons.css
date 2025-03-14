@@ -1,7 +1,3 @@
-ul, li {
-  list-style: none;
-}
-
 #map {
   width: 700px;
   height: 400px;
@@ -21,6 +17,10 @@ article .addr, .card .addr {
 
 .img-area {
   width: 288px;
+}
+
+.semi-title {
+  font-family: "HSSaemaul-Regular", sans-serif;
 }
 
 .underline {
@@ -66,19 +66,22 @@ article .addr, .card .addr {
   padding: 10px;
 }
 
-/* .plus {
-  position: absolute;
-} */
 .area-btn {
   display: inline-block;
 }
 
 .paging {
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .paging .items-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .paging .page-link {
@@ -105,4 +108,4 @@ article .addr, .card .addr {
   text-align: center;
   margin-top: 100px;
   color: lightgray;
-}/*# sourceMappingURL=commons.css.map */
+}

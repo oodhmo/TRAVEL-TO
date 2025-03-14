@@ -1,6 +1,4 @@
-ul, li {
-  list-style: none;
-}
+@import './variables.scss';
 
 #map {
   width: 700px;
@@ -22,6 +20,10 @@ article, .card {
 
 .img-area {
   width: 288px;
+}
+
+.semi-title {
+  font-family: $font-mini-title;
 }
 
 //underline
@@ -74,12 +76,6 @@ article, .card {
 .pd10 {
   padding: 10px;
 }
-
-
-//icon
-/* .plus {
-  position: absolute;
-} */
 
 .area-btn {
   display: inline-block;

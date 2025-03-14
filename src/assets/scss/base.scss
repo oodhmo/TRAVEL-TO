@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+body, div, ul, span, h1, h2, h3, h4, h5, h6, form, input, label, button, textarea, th, td, p, a, header, footer, nav, section {
+  font-family: $font-base;
+  font-weight: $fw-base;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  overflow-x:hidden;
+}
+
+#layout {
+  position: fixed;
+  z-index: 1000;  
+  order: 1;  
+}
+
+#content {
+  position: absolute;
+  z-index: -1;
+}
+
+#home {
+  z-index: -2;
+  order:2;
+}
+
+#footer {
+  order:3;
+}
