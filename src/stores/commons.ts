@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { Icat1, Icat2, Icat3 } from '@/types/category'
 import { IItemDetail, IItemDetail2 } from '@/types/tour-items'
 import { fetchContentDetail, fetchContentDetail2, fetchDetailImage, fetchSearchResult } from '@/api'
-import { IQuery } from '@/types/query'
+import { IParam } from '@/types/query'
 
 export const useCommonsStore = defineStore('commonsStore', {
   state: () => ({
@@ -17,15 +17,22 @@ export const useCommonsStore = defineStore('commonsStore', {
 
     //search
     searchResult: [] as Array<any>,
-    searchTotalCnt: 0 as number
+    searchTotalCnt: 0 as number,
+
+    //detail type
+    detailType: 1 as number, // 1: 여행지, 2: 축제/행사, 3: 레포츠
   }), 
   actions: {
+    setDetailType(type: number) {
+      this.detailType = type;
+    },
+
     getContentDetail(contentId: string | string[], contentTypeId: string) {
       fetchContentDetail(contentId)
         .then((resp:any) => {
-          this.contentDetail = resp.data.response.body.items.item[0]
-          let addr:Array<string> = resp.data.response.body.items.item[0].addr1.split(' ')
-          this.sigungu = `${addr[0]} ${addr[1]}`
+          this.contentDetail = resp.data.response.body.items.item[0];
+          let addr:Array<string> = resp.data.response.body.items.item[0].addr1.split(' ');
+          this.sigungu = `${addr[0]} ${addr[1]}`;
         })
       
       fetchContentDetail2(contentId, contentTypeId)
@@ -39,7 +46,7 @@ export const useCommonsStore = defineStore('commonsStore', {
         })
     },
 
-    getSearchResult(query: IQuery) {
+    getSearchResult(query: IParam) {
       fetchSearchResult(query)
         .then((resp:any) => {
           console.log(resp.data)

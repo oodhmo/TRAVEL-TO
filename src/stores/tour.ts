@@ -2,7 +2,7 @@
 import { defineStore } from 'pinia'
 import { fetchTourInfo } from '@/api'
 import { IItems } from '@/types/tour-items'
-import { IQuery } from '@/types/query'
+import { IParam } from '@/types/query'
 import { Icat1, Icat2, Icat3 } from '@/types/category'
 import _ from 'lodash'
 
@@ -14,7 +14,7 @@ export const useTourStore = defineStore('tourStore', {
     tourAreaCode: '' as string | undefined
   }),
   actions: {
-    getTourList(query:IQuery) {
+    getTourList(query:IParam) {
       fetchTourInfo(query)
         .then((resp:any) => {
           console.log(resp)
@@ -22,7 +22,7 @@ export const useTourStore = defineStore('tourStore', {
           this.selectedArea = query?.areaCode
         })
     },
-    getTourItemsCount(query:IQuery) {
+    getTourItemsCount(query:IParam) {
       fetchTourInfo(query)
         .then((resp:any) => {
           this.tourItemsCount = resp.data.response.body.totalCount

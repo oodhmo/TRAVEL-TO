@@ -36,9 +36,14 @@
                   </div>
                   <div class="cards-wrapper">
                     <div class="cards" :style="{ transform: `translateX(${translateX}px)` }">
-                      <content-card v-for="item in cultureStore.festivalList" :key="item.contentid" :title="item.title"
-                        :imgUrl="item.firstimage" :stDate="item.eventstartdate" :edDate="item.eventenddate"
-                        :addr="item.addr1" :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
+                      <content-card v-for="item in cultureStore.festivalList" 
+                        :key="item.contentid" 
+                        :title="item.title"
+                        :imgUrl="item.firstimage" 
+                        :stDate="item.eventstartdate" 
+                        :edDate="item.eventenddate"
+                        :addr="item.addr1" 
+                        :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
                     </div>
                   </div>
                   <div class="arrow-btn"
@@ -96,7 +101,7 @@ import type { Ref } from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import { useTourStore } from '@/stores/tour'
 import moment from 'moment'
-import { IQuery } from '@/types/query'
+import { IParam } from '@/types/query'
 import { useRouter } from 'vue-router'
 import BottomFooter from '@/components/BottomFooter.vue'
 import ContentCard from '@/components/ContentCard.vue'
@@ -181,7 +186,7 @@ const setWeekOfMonth = (): void => {
 };
 
 /******* 축제 정보 *******/
-let query: Ref<IQuery> = ref({
+let query: Ref<IParam> = ref({
   pageNo: '1',
   numOfRows: 5,
   eventStartDate: '',

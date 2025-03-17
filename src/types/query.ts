@@ -1,4 +1,4 @@
-export declare interface IQuery {
+export declare interface IParam {
   listYN?: string | undefined
   areaCode?: string | undefined
   contentTypeId?: string | number | undefined

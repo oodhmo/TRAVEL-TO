@@ -75,7 +75,7 @@ import { onMounted, reactive, ref } from 'vue'
 import type { Ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Paginate from 'vuejs-paginate-next'
-import { IQuery } from '@/types/query'
+import { IParam } from '@/types/query'
 
 const commonsStore = useCommonsStore()
 
@@ -84,7 +84,7 @@ const router = useRouter()
 
 const areaCodes = require('@/assets/data/areacode.json').AREA
 
-let query : IQuery = reactive({
+let query : IParam = reactive({
   keyword: route.query.keyword,
   contentTypeId: '12',
   areaCode: '',

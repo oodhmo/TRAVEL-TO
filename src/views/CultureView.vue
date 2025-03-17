@@ -70,7 +70,7 @@ import type {Ref} from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import 'v-calendar/dist/style.css';
 import Paginate from 'vuejs-paginate-next';
-import IQuery from '@/types/query'
+import IParam from '@/types/query'
 import {useRouter} from 'vue-router'
 
 const cultureStore = useCultureStore()
@@ -78,7 +78,7 @@ const areaCodes = require('@/assets/data/areacode.json').AREA
 
 const router = useRouter()
 
-let query : Ref<IQuery> = ref({
+let query : Ref<IParam> = ref({
   pageNo: '1',
   eventStartDate: '',
   eventEndDate: '',

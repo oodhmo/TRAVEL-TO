@@ -177,3 +177,21 @@ export declare interface IItemDetail2 {
   usefeeleports: string,
   discountinfofestival: string
 }
+
+export declare interface IDetailInfo extends Pick<IItemDetail, 
+  'title' | 'sigungucode' | 'firstimage' | 'overview' | 'homepage' | 'addr1'>, 
+  Pick<IItemDetail2, 'usetime' | 'restdate' | 'parking' | 'infocenter'> {
+    originimgurl: string,
+}
+
+/*********************Content 응답 타입********************* */
+
+export declare interface IDetailResponse {
+  response?: {
+    body?: {
+      items?: {
+        item: IItemDetail[]
+      }
+    }
+  }
+}

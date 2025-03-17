@@ -6,6 +6,7 @@ import LeisureView from '../views/LeisureView.vue'
 import TourDetailView from '../views/TourDetailView.vue'
 import CultureDetailView from '../views/CultureDetailView.vue'
 import LeisureDetailView from '../views/LeisureDetailView.vue'
+import ContentDetail from '../views/ContentDetail.vue';
 import SearchView from '../views/SearchView.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -48,7 +49,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/search',
     name: 'search',
     component: SearchView
-  }
+  },
+  {
+    path: '/detail/:type/:id',
+    name: 'contentDetail',
+    component: ContentDetail
+  },
 ]
 
 const router = createRouter({

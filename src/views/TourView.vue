@@ -116,7 +116,7 @@ import { defineComponent, ref, reactive, onMounted } from 'vue'
 import type { Ref } from 'vue'
 import { useTourStore } from '@/stores/tour'
 import _ from 'lodash'
-import { IQuery } from '@/types/query'
+import { IParam } from '@/types/query'
 import { Icat1, Icat2, Icat3 } from '@/types/category'
 import Paginate from 'vuejs-paginate-next';
 import { useRouter } from 'vue-router'
@@ -128,7 +128,7 @@ const areaCodes = require('@/assets/data/areacode.json').AREA
 const cateCodes = require('@/assets/data/catcode.json').TOUR_SPOT
 
 //url query methods
-let query : IQuery = reactive({
+let query : IParam = reactive({
   listYN: "Y",
   areaCode: tourStore.tourAreaCode,
   cat1: "",
@@ -144,7 +144,7 @@ const setNowArea = (code?:string) : void => {
   nowArea.value = _.find(areaCodes, {code: code})
 }
 
-const getAreaItems = (query : IQuery) : void => {
+const getAreaItems = (query : IParam) : void => {
   resetPage()
   tourStore.getTourList(query)
   tourStore.getTourItemsCount(query)

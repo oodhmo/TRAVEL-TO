@@ -97,7 +97,7 @@ import { Icat1, Icat2, Icat3 } from '@/types/category';
 import { useLeisureStore } from '@/stores/leisure'
 import { useRouter } from 'vue-router'
 import _ from 'lodash'
-import { IQuery } from '@/types/query';
+import { IParam } from '@/types/query';
 import Paginate from 'vuejs-paginate-next';
 
 const leisure = require('@/assets/data/catcode.json').LEISURE
@@ -107,7 +107,7 @@ const leisureStore = useLeisureStore()
 
 const router = useRouter()
 
-let query : Ref<IQuery> = ref({
+let query : Ref<IParam> = ref({
   contentTypeId: '28',
   cat1: "A03",
   cat2: "",
