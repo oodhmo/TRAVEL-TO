@@ -27,7 +27,13 @@
 
             <div v-if="commonsStore.searchResult" class="list">
               <div v-for="re in commonsStore.searchResult" :key="re.contentid">
-                <b-card :img-src="re.firstimage" img-alt="Card image" img-left class="mb-3" @click="pageLink(re.contentid, re.contenttypeid)">
+                <b-card 
+                  :img-src="re.firstimage" 
+                  img-alt="Card image" 
+                  img-left 
+                  class="mb-3" 
+                  @click="pageLink(re.contentid, re.contenttypeid)"
+                >
                   <b-card-text>
                     <strong class="result-title">{{re.title}}</strong>
                     <div class="addr">{{re.addr1}}</div>
@@ -101,16 +107,9 @@ const goToSearch = () => {
 
 // 디테일 페이지로 이동 
 const pageLink = (contentId : string, contentTypeId: string) => {
-  if(contentTypeId === '12') {
-    router.push(`/tour/detail/${contentTypeId}/${contentId}`)
-  }
-  else if(contentTypeId === '15') {
-    router.push(`/culture/detail/${contentTypeId}/${contentId}`)
-  }
-  else if(contentTypeId === '28') {
-    router.push(`/leisure/detail/${contentTypeId}/${contentId}`)
-  }
-  
+  // contentTypeId 12: 여행지, 15: 축제/행사, 28: 여가활동
+  commonsStore.detailType = contentTypeId === '12' ? 1 : (contentTypeId === '15' ? 2 : 3)
+  router.push(`/detail/${contentTypeId}/${contentId}`)
 }
 
 //페이징

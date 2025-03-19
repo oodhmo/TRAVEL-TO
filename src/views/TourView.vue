@@ -30,8 +30,13 @@
               <div v-if="tourStore.tourList.item" class="wrapper">
                 <div class="mt-4 spots"
                   v-for="des in tourStore.tourList.item" :key="des.contentid">
-                  <b-card :img-src="des.firstimage" img-alt="Card image" img-left class="mb-3"
-                    @click="pageLink(des.contentid, des.contenttypeid)">
+                  <b-card 
+                    :img-src="des.firstimage" 
+                    img-alt="Card image" 
+                    img-left 
+                    class="mb-3"
+                    @click="onClickContent(des.contentid, des.contenttypeid)"
+                  >
                     <b-card-text>
                       <strong class="spot-title">{{des.title}}</strong>
                       <div>{{des.addr1}}</div>
@@ -115,6 +120,7 @@
 import { defineComponent, ref, reactive, onMounted } from 'vue'
 import type { Ref } from 'vue'
 import { useTourStore } from '@/stores/tour'
+import { useCommonsStore } from '@/stores/commons'
 import _ from 'lodash'
 import { IParam } from '@/types/query'
 import { Icat1, Icat2, Icat3 } from '@/types/category'
@@ -122,6 +128,7 @@ import Paginate from 'vuejs-paginate-next';
 import { useRouter } from 'vue-router'
 
 const tourStore = useTourStore()
+const commonsStore = useCommonsStore()
 const router = useRouter()
 
 const areaCodes = require('@/assets/data/areacode.json').AREA
@@ -216,10 +223,10 @@ const resetPage = () => {
 }
 
 // detailView로 이동
-const pageLink = (contentId : string, contentTypeId: string) => {
-  router.push(`/tour/detail/${contentTypeId}/${contentId}`)
+const onClickContent = (contentId : string, contentTypeId: string) => {
+  commonsStore.detailType = 1;
+  router.push(`/detail/${contentTypeId}/${contentId}`);
 }
-
 
 tourStore.getTourList(query) // 페이지 로드 시 전체 
 tourStore.getTourItemsCount(query) // 데이터 총 개수

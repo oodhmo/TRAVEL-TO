@@ -1,10 +1,11 @@
 @import '../variables.scss';
 
 .content-card {
-  width: 200px;
-  height: 270px;
+  width: 210px;
+  height: 275px;
   border: 1px solid lightgray;
   border-radius: 13px;
+  background-color: white;
 
   cursor: pointer;
   overflow: hidden;

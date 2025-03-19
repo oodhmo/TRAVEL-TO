@@ -23,7 +23,7 @@
     <div class="list">
       <div class="semi-title">{{date.getMonth()+1}}월 {{date.getDate()}}일의 행사/축제 🎏</div>
       <div class="totalCnt">총 <strong class="cnt">{{cultureStore.festivalItemCnt}}</strong>개</div>
-      <!--border bottom-->
+      
       <div class="festival" v-if="cultureStore.festivalList">
         <b-card-group v-for="card in cultureStore.festivalList" :key="card.contentid">
           <b-card
@@ -34,7 +34,7 @@
             tag="article"
             style="max-width: 17rem;"
             class="mb-2"
-            @click="pageLink(card.contentid, card.contenttypeid)"
+            @click="onClickContent(card.contentid, card.contenttypeid)"
           >
             <b-card-text>
               <div class="date">{{setStEdDateForm(card.eventstartdate, card.eventenddate)}}</div>
@@ -70,10 +70,12 @@ import type {Ref} from 'vue'
 import { useCultureStore } from '@/stores/culture'
 import 'v-calendar/dist/style.css';
 import Paginate from 'vuejs-paginate-next';
-import IParam from '@/types/query'
+import {IParam} from '@/types/query'
 import {useRouter} from 'vue-router'
+import { useCommonsStore } from '@/stores/commons';
 
-const cultureStore = useCultureStore()
+const cultureStore = useCultureStore();
+const commonsStore = useCommonsStore();
 const areaCodes = require('@/assets/data/areacode.json').AREA
 
 const router = useRouter()
@@ -92,8 +94,8 @@ date.value = new Date()
 
 const setDateForm = () : void => {
   const year :number = date.value.getFullYear()
-  let month :number|string = date.value.getMonth() + 1
-  let day :number|string = date.value.getDate()
+  let month :any = date.value.getMonth() + 1
+  let day :any = date.value.getDate()
 
   if(month < 10) month = '0' + month
   if(day < 10) day = '0' + day
@@ -106,17 +108,18 @@ const setDateForm = () : void => {
 const setStEdDateForm = (st:string, ed:string) : string => {
   let datearr:Array<string> = [st, ed]
   datearr.forEach((date:string, idx:number)=>{
-    let y: string = date.substr(0, 4)
-    let m: string = date.substr(4, 2)
-    let d: string = date.substr(6, 2)
+    let y: string = date.substring(0, 4)
+    let m: string = date.substring(4, 2)
+    let d: string = date.substring(6, 2)
     datearr[idx] = `${y}.${m}.${d}`
   })
   return `${datearr[0]} ~ ${datearr[1]}`
 }
 
 // detailView로 이동
-const pageLink = (contentId : string, contentTypeId: string) => {
-  router.push(`/culture/detail/${contentTypeId}/${contentId}`)
+const onClickContent = (contentId : string, contentTypeId: string | number) => {
+  commonsStore.detailType = 2
+  router.push(`/detail/${contentTypeId}/${contentId}`)
 }
 
 //페이지에 따른 데이터

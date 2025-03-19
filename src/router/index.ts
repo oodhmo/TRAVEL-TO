@@ -3,9 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import TourView from '../views/TourView.vue'
 import CultureView from '../views/CultureView.vue'
 import LeisureView from '../views/LeisureView.vue'
-import TourDetailView from '../views/TourDetailView.vue'
-import CultureDetailView from '../views/CultureDetailView.vue'
-import LeisureDetailView from '../views/LeisureDetailView.vue'
+// import TourDetailView from '../views/TourDetailView.vue'
+// import CultureDetailView from '../views/CultureDetailView.vue'
+// import LeisureDetailView from '../views/LeisureDetailView.vue'
 import ContentDetail from '../views/ContentDetail.vue';
 import SearchView from '../views/SearchView.vue'
 
@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'leisure',
     component: LeisureView
   },
-  {
+  /* {
     path: '/tour/detail/:type/:id',
     name: 'tourdetail',
     component: TourDetailView
@@ -44,7 +44,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/leisure/detail/:type/:id',
     name: 'leisuredetail',
     component: LeisureDetailView
-  },
+  }, */
   {
     path: '/search',
     name: 'search',
@@ -60,7 +60,7 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     // always scroll to top
     return { top: 0 }
   },

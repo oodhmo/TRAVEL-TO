@@ -43,7 +43,8 @@
                         :stDate="item.eventstartdate" 
                         :edDate="item.eventenddate"
                         :addr="item.addr1" 
-                        :link="`/culture/detail/${item.contenttypeid}/${item.contentid}`" />
+                        :link="`/detail/${item.contenttypeid}/${item.contentid}`"
+                        @click="() => commonsStore.detailType = 2" />
                     </div>
                   </div>
                   <div class="arrow-btn"
@@ -105,6 +106,7 @@ import { IParam } from '@/types/query'
 import { useRouter } from 'vue-router'
 import BottomFooter from '@/components/BottomFooter.vue'
 import ContentCard from '@/components/ContentCard.vue'
+import { useCommonsStore } from '@/stores/commons'
 
 interface AreaCode {
   code: string;
@@ -116,6 +118,7 @@ interface AreaCode {
 const areaCodes: AreaCode[] = require('@/assets/data/areacode.json').AREA;
 
 const cultureStore = useCultureStore();
+const commonsStore = useCommonsStore();
 const tourStore = useTourStore();
 
 const router = useRouter();

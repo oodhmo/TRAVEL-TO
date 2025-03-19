@@ -1,5 +1,5 @@
 import { IParam } from '@/types/query';
-import { IDetailResponse } from '@/types/tour-items';
+import { IDetailResponse, IDetail2Response, IDetailImageResponse } from '@/types/tour-items';
 import axios from 'axios';
 
 const config = {
@@ -33,12 +33,12 @@ const fetchContentDetail = (contentId: string | string[]): Promise<IDetailRespon
 }
 
 //개장시간 등 더 상세한 정보
-const fetchContentDetail2 = (contentId: string | string[], contentTypeId: string) => {
+const fetchContentDetail2 = (contentId: string | string[], contentTypeId: string | string[]): Promise<IDetail2Response> => {
   return axios.get(config.baseUrl + `/detailIntro1?serviceKey=${process.env.VUE_APP_API_KEY}&MobileOS=ETC&MobileApp=AppTest&_type=json&contentId=${contentId}&contentTypeId=${contentTypeId}`)
 }
 
 // 디테일 페이지 이미지
-const fetchDetailImage = (contentId: string | string[]) => {
+const fetchDetailImage = (contentId: string | string[]): Promise<IDetailImageResponse> => {
   return axios.get(config.baseUrl + `/detailImage1?serviceKey=${process.env.VUE_APP_API_KEY}&MobileOS=ETC&MobileApp=AppTest&_type=json&imageYN=Y&subImageYN=Y&contentId=${contentId}`)
 }
 

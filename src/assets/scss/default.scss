@@ -204,11 +204,6 @@ footer {
 
   .content {
     color: black;
-
-    .content-card {
-      background-color: white;
-      height: 275px;
-    }
   }
 
   .title-wrapper {
@@ -1004,12 +999,50 @@ footer {
     .images {
       margin-top: 100px;
       display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .image-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 470px;
+      min-height: 300px;
+    }
+
+    .loader {
+      position: absolute;
+      
+      &::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border: 4px solid #ccc;
+        border-top-color: #333;
+        border-radius: 50%;
+        display: inline-block;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     }
 
     img {
-      //margin-left: 80px;
       width: 470px;
       margin-bottom: 50px;
+
+      &:only-child {
+        width: 700px;
+        margin: 0 auto 50px auto;
+        display: block;
+      }
     }
 
     .semi-title {
@@ -1033,13 +1066,16 @@ footer {
     margin: 40px;
     box-sizing: border-box;
 
+    .no-info {
+      color: $color-no-info;
+    }
+
     table {
       width: 600px;
       font-size: 14px;
       margin: 10px;
       border-top: 2px solid #e7e8ed;
       border-bottom: 2px solid #e7e8ed;
-
 
       tr {
         border-bottom: 1px solid #e7e8ed;

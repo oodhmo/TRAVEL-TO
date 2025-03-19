@@ -48,12 +48,29 @@ export declare interface IItemDetail {
 }
 
 export declare interface IItemDetail2 {
+  agelimit: string,
+  bookingplace: string,
+  contentid: string,
+  contenttypeid: string,
+  discountinfofestival: string,
+  eventstartdate: string,
+  eventenddate: string,
+  eventhomepage: string,
+  eventplace: string,
+  festivalgrade: string,
+  placeinfo: string,
+  playtime: string,
+  program: string,
+  spendtimefestival: string,
+  sponsor1: string,
+  sponsor1tel: string,
+  sponsor2: string,
+  sponsor2tel: string,
+  subevent: string,
+  usetimefestival: string,
   parkingleports: string,
   reservation: string,
   restdateleports: string,
-  eventstartdate: string,
-  festivalgrade: string,
-  placeinfo: string,
   parkinglodging: string,
   pickup: string,
   roomcount: string,
@@ -70,19 +87,12 @@ export declare interface IItemDetail2 {
   fitness: string,
   karaoke: string,
   publicbath: string,
-  eventenddate: string,
-  eventhomepage: string,
-  eventplace: string,
   opendate: string,
   parking: string,
   restdate: string,
   useseason: string,
   usetime: string,
   accomcountculture: string,
-  sponsor2: string,
-  sponsor2tel: string,
-  subevent: string,
-  usetimefestival: string,
   distance: string,
   infocentertourcourse: string,
   schedule: string,
@@ -122,8 +132,6 @@ export declare interface IItemDetail2 {
   smoking: string,
   treatmenu: string,
   lcnsno: string,
-  contentid: string,
-  contenttypeid: string,
   accomcount: string,
   chkbabycarriage: string,
   chkcreditcard: string,
@@ -144,10 +152,6 @@ export declare interface IItemDetail2 {
   infocenterleports: string,
   openperiod: string,
   parkingfeeleports: string,
-  program: string,
-  spendtimefestival: string,
-  sponsor1: string,
-  sponsor1tel: string,
   chkpetculture: string,
   discountinfo: string,
   infocenterculture: string,
@@ -158,8 +162,6 @@ export declare interface IItemDetail2 {
   usetimeculture: string,
   scale: string,
   spendtime: string,
-  agelimit: string,
-  bookingplace: string,
   usetimeleports: string,
   accomcountlodging: string,
   benikia: string,
@@ -170,28 +172,62 @@ export declare interface IItemDetail2 {
   goodstay: string,
   hanok: string,
   infocenterlodging: string,
-  playtime: string,
   chkbabycarriageculture: string,
   chkcreditcardculture: string,
   scaleleports: string,
   usefeeleports: string,
-  discountinfofestival: string
 }
 
 export declare interface IDetailInfo extends Pick<IItemDetail, 
-  'title' | 'sigungucode' | 'firstimage' | 'overview' | 'homepage' | 'addr1'>, 
-  Pick<IItemDetail2, 'usetime' | 'restdate' | 'parking' | 'infocenter'> {
+  'title' | 'sigungucode' | 'firstimage' | 'overview' | 'homepage' | 'addr1' | 'mapx' | 'mapy' | 'tel'>, 
+  Pick<IItemDetail2, 'usetime' | 'restdate' | 'parking' | 'infocenter' | 'eventstartdate' | 'eventenddate' | 'playtime' | 'bookingplace' | 'sponsor2' | 'usetimefestival' | 'openperiod' | 'usetimeleports' | 'parkingleports' | 'reservation' | 'infocenterleports' | 'restdateleports'> {
     originimgurl: string,
+    sigungu?: string
+}
+
+export interface IDetailImage {
+  contentid: string;
+  cpyrhtDivCd: string;
+  imgname: string;
+  originimgurl: string;
+  serialnum: string;
+  smallimageurl: string;
 }
 
 /*********************Content 응답 타입********************* */
 
 export declare interface IDetailResponse {
-  response?: {
-    body?: {
-      items?: {
-        item: IItemDetail[]
-      }
-    }
-  }
+  data: {
+    response: {
+      body: {
+        items: {
+          item: IItemDetail[];
+        };
+      };
+    };
+  };
+}
+
+export declare interface IDetail2Response {
+  data: {
+    response: {
+      body: {
+        items: {
+          item: IItemDetail2[];
+        };
+      };
+    };
+  };
+}
+
+export declare interface IDetailImageResponse {
+  data: {
+    response: {
+      body: {
+        items: {
+          item: IDetailImage[];
+        };
+      };
+    };
+  };
 }

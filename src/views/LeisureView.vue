@@ -62,7 +62,7 @@
               tag="article"
               style="max-width: 17rem;"
               class="mb-2"
-              @click="pageLink(card.contentid, card.contenttypeid)"
+              @click="onClickContent(card.contentid, card.contenttypeid)"
             >
               <b-card-text>
                 <div>{{card.addr1}}</div>
@@ -99,6 +99,7 @@ import { useRouter } from 'vue-router'
 import _ from 'lodash'
 import { IParam } from '@/types/query';
 import Paginate from 'vuejs-paginate-next';
+import { useCommonsStore } from '@/stores/commons'
 
 const leisure = require('@/assets/data/catcode.json').LEISURE
 const areaCodes = require('@/assets/data/areacode.json').AREA
@@ -106,6 +107,7 @@ const areaCodes = require('@/assets/data/areacode.json').AREA
 const leisureStore = useLeisureStore()
 
 const router = useRouter()
+const commonsStore = useCommonsStore()
 
 let query : Ref<IParam> = ref({
   contentTypeId: '28',
@@ -194,8 +196,9 @@ const getLeisureCards = () : void => {
 }
 
 // detailView로 이동
-const pageLink = (contentId : string, contentTypeId: string) => {
-  router.push(`/leisure/detail/${contentTypeId}/${contentId}`)
+const onClickContent = (contentId : string, contentTypeId: string) => {
+  commonsStore.detailType = 3
+  router.push(`/detail/${contentTypeId}/${contentId}`)
 }
 
 //선택한 태그 표시.. 나중에 구현하자
