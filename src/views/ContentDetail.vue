@@ -81,6 +81,10 @@ const detailInfo = reactive<IDetailInfo>({
   usetimefestival: '',
   openperiod: '',
   usetimeleports: '',
+  parkingleports: '',
+  restdateleports: '',
+  infocenterleports: '',
+  reservation: ''
 })
 
 const getContentDetail = (): void => {
